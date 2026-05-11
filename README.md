@@ -1,6 +1,7 @@
 # Data Localization Project Instructions
 ## 0: 环境准备
 Python 版本：3.11
+
 环境配置：
 ```bash
 pip install requests
@@ -118,6 +119,7 @@ Ping ID: 170170717, Traceroute ID: 170170718
 data analysis 暂时见仁见智，我写的仅供参考。
 
 脚本分为六个独立的部分，逻辑是线性串联的：
+
 **Section 1 — Atlas Helpers**：所有和RIPE API通信的底层函数，包括轮询状态、下载结果、解析探针国家。
 
 **Section 2 — RTT Logic**：核心公式 `d ≤ (RTT × 200) / 2` 和 Anycast 判断，把距离阈值统一定义在 `THRESHOLDS` 列表里，方便你们之后换其他国家时修改。

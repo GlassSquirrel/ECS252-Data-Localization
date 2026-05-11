@@ -45,7 +45,8 @@ api.paypal.com.      CNAME     api.glb.paypal.com.
 api.glb.paypal.com.  A         66.211.168.123
 ```
 
-可知 **Target IP** 为`66.211.168.123`
+可知 **Target IP** 为`66.211.168.123`。
+
 关键信号：`glb = Global Load Balancer`，高度疑似 **Anycast** 部署。 意味着不同地区的探针可能命中不同的物理服务器。
 
 （非必要）可以用 GEOIP 进行初判：
@@ -82,11 +83,13 @@ curl https://ipinfo.io/66.211.168.123/json
 |🇺🇸 US-East|美国参照点|2个|任意|
 
 ⚠️ 印度探针选择多个不同ISP（Jio/Airtel/BSNL），避免单一运营商路由偏差影响结论
+
 *以上选择仅供参考，可根据具体情况进行调整*
 （这一步不用进行实际操作，只是说明探针的选择方式）
 
 ## 3: 提交测量任务 (Atlas API)
 去 RIPE Atlas 的 dashboard 里面找到 My API Keys，创建你自己的 API Key，permission 一定要选择添加 **Schedule a new measurement** 进行授权。如果后续跑代码出现授权问题大概率是这里出错了。
+
 进入`measurement.py`，根据实际情况修改以下位置的代码: 
 
 ```python
@@ -116,9 +119,13 @@ data analysis 暂时见仁见智，我写的仅供参考。
 
 脚本分为六个独立的部分，逻辑是线性串联的：
 **Section 1 — Atlas Helpers**：所有和RIPE API通信的底层函数，包括轮询状态、下载结果、解析探针国家。
+
 **Section 2 — RTT Logic**：核心公式 `d ≤ (RTT × 200) / 2` 和 Anycast 判断，把距离阈值统一定义在 `THRESHOLDS` 列表里，方便你们之后换其他国家时修改。
+
 **Section 3 & 4 — Ping / Traceroute**：分析阶段，Traceroute 解析时会把所有出现过的 hop IP 加入 `whois_queue`，自动为后续 WHOIS 做准备，不需要手动维护 IP 列表。
+
 **Section 5 — WHOIS / GeoIP**：批量查询 `ipinfo.io`，然后 `annotate_paths()` 把 WHOIS 结果叠加回每条 traceroute 路径上，让你直接看到每个 hop 属于哪个 AS、在哪个城市。
+
 **Section 6 — Summary**：根据 IN/US RTT 比值和印度路径的最后几跳，自动生成一段面向 RBI mandate 的 policy implication 文字，可以直接引用进报告。
 
 运行前只需要改最顶部的几个变量，其余逻辑完全复用。

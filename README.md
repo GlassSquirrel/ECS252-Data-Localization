@@ -95,7 +95,7 @@ curl https://ipinfo.io/66.211.168.123/json
 
 ```python
 API_KEY = "your_atlas_api_key" 
-TARGET_IP = "xx.xxx.xxx.xxx" # 来自第2步里的dig结果
+TARGET_IP = "xxx" # 二编：直接写域名！！
 ```
 
 运行`measurement.py`: 

@@ -1,8 +1,8 @@
 import requests
 
-API_KEY = "Your_RIPE_Atlas_API"
+API_KEY = "Your_RIPE_Atlas_API"  # to be changed
 # use the domain instead of IP address!
-TARGET_HOST = "payments.google.com"  # to be changed
+TARGET_HOST = "Target_Domain_Name"  # to be changed
 
 payload = {
     "definitions": [
@@ -12,7 +12,7 @@ payload = {
             "type": "ping", 
             "packets": 5,
             "resolve_on_probe": True, # let evert probe resolve DNS locally
-            "description": "MobiKwik API - Ping"    # to be changed
+            "description": "[Server_Component] - Ping"    # to be changed
         },
         {
             "target": TARGET_HOST, 
@@ -22,7 +22,7 @@ payload = {
             "port": 443, 
             "max_hops": 32,
             "resolve_on_probe": True, 
-            "description": "MobiKwik API - Traceroute TCP/443"   # to be changed
+            "description": "[Server_Component] - Traceroute TCP/443"   # to be changed
         }
     ],
     "probes": [

@@ -1,8 +1,8 @@
 import requests
 
-API_KEY = "这里替换成你在RIPE Atlas申请的API Key"
-# 🚨 关键修改：直接使用域名，不要用IP！
-TARGET_HOST = "walletapi.mobikwik.com"  
+API_KEY = "Your_RIPE_Atlas_API"  # to be changed
+# use the domain instead of IP address!
+TARGET_HOST = "Target_Domain_Name"  # to be changed
 
 payload = {
     "definitions": [
@@ -11,8 +11,8 @@ payload = {
             "af": 4,
             "type": "ping", 
             "packets": 5,
-            "resolve_on_probe": True, # 让每个探针在当地真实解析DNS
-            "description": "MobiKwik API - Ping"
+            "resolve_on_probe": True, # let evert probe resolve DNS locally
+            "description": "[Server_Component] - Ping"    # to be changed
         },
         {
             "target": TARGET_HOST, 
@@ -21,14 +21,14 @@ payload = {
             "protocol": "TCP",
             "port": 443, 
             "max_hops": 32,
-            "resolve_on_probe": True, # 同上
-            "description": "MobiKwik API - Traceroute TCP/443"
+            "resolve_on_probe": True, 
+            "description": "[Server_Component] - Traceroute TCP/443"   # to be changed
         }
     ],
     "probes": [
-        # 实验组：印度本土
+        # India
         {"type": "country", "value": "IN", "requested": 5}, 
-        # 对照组：海外节点（看看延迟会不会飙升）
+        # Overseas
         {"type": "country", "value": "SG", "requested": 2},
         {"type": "country", "value": "DE", "requested": 2},
         {"type": "country", "value": "US", "requested": 2}
@@ -49,8 +49,8 @@ if "measurements" not in data:
     raise RuntimeError(f"API error: {data}")
 
 msm_ids = data["measurements"]
-print(f"🎉 任务创建成功！")
-print(f"Ping 测试 ID: {msm_ids[0]}")
-print(f"Traceroute 测试 ID: {msm_ids[1]}")
-print(f"去浏览器查看结果(Ping): https://atlas.ripe.net/measurements/{msm_ids[0]}/")
-print(f"去浏览器查看结果(Traceroute): https://atlas.ripe.net/measurements/{msm_ids[1]}/")
+print(f"🎉 Successfully create the measurements！")
+print(f"Ping testing ID: {msm_ids[0]}")
+print(f"Traceroute testing ID: {msm_ids[1]}")
+print(f"To view the results (Ping): https://atlas.ripe.net/measurements/{msm_ids[0]}/")
+print(f"To view the results (Traceroute): https://atlas.ripe.net/measurements/{msm_ids[1]}/")

@@ -16,17 +16,19 @@ from datetime import datetime, timezone
 import math
 import io
 import sys
+from ipwhois import IPWhois
 
 # ─────────────────────────────────────────────────────────────
 # CONFIG — edit these before running
 # ─────────────────────────────────────────────────────────────
-API_KEY   = "Your_RIPE_Atlas_API"  # to be changed
+API_KEY   = "d65aa759-333c-49d8-ab48-7460d9406424"  # to be changed
 PING_ID   = 171964292   # to be changed
 TRACE_ID  = 171964294   # to be changed
 
 # Provider label used in report output
 PROVIDER  = "MobiKwik"  # to be changed
 ENDPOINT  = "CND: static.mobikwik.com"   # to be changed
+TARGET_HOST = "static.mobikwik.com"   # 纯domain，用于文件命名, to be changed
 
 # ─────────────────────────────────────────────────────────────
 # SECTION 0 — OUTPUT UTILITIES
@@ -353,21 +355,26 @@ def anycast_verdict(rtt_by_country, probe_records):
     Three complementary signals, all regions used:
  
     Signal A — IP diversity across regions
-        Different destination IPs per region  →  GeoDNS/Anycast
-        Same IP everywhere                    →  single origin (or pure Anycast with stable IP)
+        Different destination IPs per region  →  Anycast (GeoDNS: Different IPs per region)
+        Same IP everywhere                    →  Unclear, could still be pure Anycast with stable IP
  
-    Signal B — GeoIP cross-validation pattern
-        All CONSISTENT   →  each region's local PoP is real and GeoIP is accurate
-        All CONTRADICTED →  IP registered far away, but local PoPs serve traffic (classic Cloudflare)
-        Mixed            →  partial deployment or measurement noise
+    Signal B — GeoIP vs RTT cross-validation pattern
+        All CONTRADICTED →  Anycast (Cloudflare-style, IP registered far away, local PoPs serve everywhere)
+        All CONSISTENT   →  Anycast (Akamai-style, each region has a local PoP, GeoIP correctly reports it)
+        PARTIAL          →  Some regions local, others served remotely
+        UNCLEAR          →  No data
  
-    Signal C — RTT symmetry check
-        For each non-IN region R: does RTT(R) roughly match the
-        expected travel time from R to the GeoIP-claimed location?
-        If yes  →  single origin near GeoIP location
-        If no   →  local PoP is closer than GeoIP claims (Anycast)
+    Signal C — actual RTT vs expected RTT
+        For each non-IN region R: does RTT(R) roughly match the expected travel time from R to the GeoIP-claimed location?
+            Expected RTT = 2 × dist_probe_to_geoip / 200 km/ms ratio = expected
+        ratio < 0.5        →  actual << expected, Served by a nearby PoP, not the GeoIP location, Anycast
+        0.5 <= ratio <= 2  →  actual ≈ expected, Server is likely near its GeoIP-claimed location
+        ratio > 2          →  actual >> expected, anomaly, doesn't count
  
-    Final verdict combines all three signals.
+    Final verdict combines all three signals: 
+        - 2+ signals: CONFIRMED Anycast 
+        - Signal B = PARTIAL: Partial Anycast
+        - < 2 signals: No anycast evidence; confirm with traceroute
     """
     sep  = "\n" + "─" * 70
     out  = [sep, "ANYCAST DETECTION — MULTI-REGION ANALYSIS", "─" * 70]
@@ -523,146 +530,309 @@ def anycast_verdict(rtt_by_country, probe_records):
  
  
 # ─────────────────────────────────────────────────────────────
-# SECTION 4 — TRACEROUTE ANALYSIS
+# SECTION 5 — TRACEROUTE ANALYSIS
 # ─────────────────────────────────────────────────────────────
 
-# Hostname substrings that hint at a known data-center / carrier location
-# DC_HINTS = {
-#     # PayPal / eBay backbone identifiers
-#     "paypal"  : "PayPal backbone",
-#     "ebay"    : "eBay / PayPal network",
-#     # US data-center city codes
-#     "ash"     : "🇺🇸 Ashburn, VA (USA) — PayPal primary DC",
-#     "sjc"     : "🇺🇸 San Jose, CA (USA)",
-#     "ord"     : "🇺🇸 Chicago, IL (USA)",
-#     "lax"     : "🇺🇸 Los Angeles, CA (USA)",
-#     # India
-#     "bom"     : "🇮🇳 Mumbai, India",
-#     "del"     : "🇮🇳 Delhi, India",
-#     "ccu"     : "🇮🇳 Kolkata, India",
-#     # Asia-Pacific
-#     "sin"     : "🇸🇬 Singapore",
-#     "nrt"     : "🇯🇵 Tokyo, Japan",
-#     "hkg"     : "🇭🇰 Hong Kong",
-#     # Carriers seen in this measurement
-#     "zayo"    : "Zayo Group (US backbone)",
-#     "ntt"     : "NTT Communications",
-#     "airtel"  : "Bharti Airtel (India)",
-#     "hetzner" : "Hetzner (Germany)",
-# }
+CLIFF_THRESHOLD_MS = 20   # RTT cliff threshold, any diff larger than this will be seen as a cliff-like spike
 
-# # IPs we specifically want to WHOIS — populated during traceroute parsing
-# whois_queue = set()
+def _best_rtt_for_hop(hop):
+    """
+    get the minimum RTT for one hop
+    Returns: (min_rtt, corresponding_addr)
+    if *, return (None, '*')
+    """
+    best_rtt  = None
+    best_addr = "*"
+    for pkt in hop.get("result", []):
+        addr = pkt.get("from", "*")
+        rtt  = pkt.get("rtt")
+        if addr == "*" or rtt is None:
+            continue
+        if best_rtt is None or rtt < best_rtt:
+            best_rtt  = rtt
+            best_addr = addr
+    return best_rtt, best_addr
+
+def _is_foreign(info, probe_cc="IN"):
+    """
+    Return True if the IPinfo record places this IP outside the probe's
+    home country. Returns False when info is None (cannot determine).
+    """
+    if not info:
+        return False
+    return info.get("country", "") != probe_cc
+
+def parse_traceroute(results, probe_map):
+    """
+    For each traceroute path:
+      1. Record per-hop: IP address, minimum RTT, IPinfo (ASN / org / country / city)
+      2. Compute RTT diff between consecutive visible hops; flag cliff-like spikes (diff >= CLIFF_THRESHOLD_MS)
+      3. If a cliff and a foreign-country IP coincide at the same hop,
+         mark it as a confirmed cross-border egress point
+      4. After a run of silent (*) hops, if the next visible hop is foreign,
+         emit an 'egress boundary obscured' warning
+
+    Returns:
+        all_paths   : list of per-probe dicts for downstream WHOIS enrichment
+        whois_queue : set of every hop IP seen across all paths
+    """
+    print("\n" + "═" * 70)
+    print("TRACEROUTE RESULTS — hop-by-hop IPinfo + RTT cliff detection")
+    print("═" * 70)
+
+    all_paths   = []
+    whois_queue = set()
+
+    for r in results:
+        pid  = r.get("prb_id")
+        cc   = probe_map.get(pid, "??")
+        hops = r.get("result", [])
+
+        print(f"\n  {'─' * 62}")
+        print(f"  Probe {pid} ({cc}) — {len(hops)} hops toward {ENDPOINT}")
+
+        # ── Pass 1: collect minimum RTT and address for each hop ─
+        hop_records = []
+        for hop in hops:
+            idx       = hop.get("hop")
+            rtt, addr = _best_rtt_for_hop(hop)
+            hop_records.append({
+                "hop"    : idx,
+                "addr"   : addr,    # '*' if no response
+                "rtt"    : rtt,     # None if no response
+                "ipinfo" : None,    # filled in Pass 2
+                "cliff"  : False,
+                "egress" : False,
+                "delta"  : None,
+            })
+
+        # ── Pass 2: query IPinfo for every hop that returned an IP ─
+        for rec in hop_records:
+            if rec["addr"] == "*":
+                continue
+            info = get_ip_info(rec["addr"])   # reuse helper from Section 2
+            rec["ipinfo"] = info
+            whois_queue.add(rec["addr"])
+            time.sleep(0.2)                   # respect ipinfo free-tier rate limit
+
+        # ── Pass 3: RTT cliff detection and egress classification ─
+        visible = [rec for rec in hop_records if rec["rtt"] is not None]
+        for i in range(1, len(visible)):
+            prev  = visible[i - 1]
+            curr  = visible[i]
+            delta = curr["rtt"] - prev["rtt"]
+            if delta >= CLIFF_THRESHOLD_MS:
+                curr["cliff"] = True
+                curr["delta"] = delta
+                # cliff coincides with a foreign IP → confirmed egress
+                if _is_foreign(curr["ipinfo"], probe_cc=cc):
+                    curr["egress"] = True
+
+        # ── Pass 4: print hop-by-hop results ─────────────────────
+        in_star_run = False   # track whether we are inside a run of silent hops
+
+        for rec in hop_records:
+            hop_idx   = rec["hop"]
+            addr      = rec["addr"]
+            rtt       = rec["rtt"]
+            info      = rec["ipinfo"]
+            is_cliff  = rec["cliff"]
+            is_egress = rec["egress"]
+            delta     = rec["delta"]
+
+            if addr == "*":
+                print(f"    hop {hop_idx:>3}: {'*':<45}    (no response)")
+                in_star_run = True
+                continue
+
+            # first visible hop after a silent run: warn if already foreign
+            if in_star_run and _is_foreign(info, probe_cc=cc):
+                print(f"          ⚠️  Egress boundary obscured by preceding silent hops")
+            in_star_run = False
+
+            # build IPinfo summary line
+            if info:
+                geo_tag = (f"{info.get('country', '?')} / "
+                           f"{info.get('city', '?')} / "
+                           f"{info.get('org', '?')}")
+            else:
+                geo_tag = "(IPinfo unavailable)"
+
+            # build annotation flags
+            flags = ""
+            if is_cliff:
+                flags += f"  ⚡ RTT +{delta:.0f} ms"
+            if is_egress:
+                flags += "  🚨 CONFIRMED EGRESS"
+            elif is_cliff and _is_foreign(info, probe_cc=cc):
+                flags += "  ⚠️  possible egress (foreign IP at cliff)"
+
+            print(f"    hop {hop_idx:>3}: {addr:<45} {rtt:>7.1f} ms{flags}")
+            print(f"           {geo_tag}")
+
+        # ── per-path summary ──────────────────────────────────────
+        egress_hops = [rec for rec in hop_records if rec["egress"]]
+        cliff_hops  = [rec for rec in hop_records if rec["cliff"]]
+
+        # check whether any silent-hop run conceals an egress boundary
+        obscured = False
+        for i, rec in enumerate(hop_records):
+            if rec["addr"] != "*":
+                continue
+            for nxt in hop_records[i + 1 : i + 3]:
+                if _is_foreign(nxt.get("ipinfo"), probe_cc=cc):
+                    obscured = True
+                    break
+
+        print(f"\n    Summary for probe {pid} ({cc}):")
+        print(f"      RTT cliffs detected   : {len(cliff_hops)}"
+              f"  at hops {[rec['hop'] for rec in cliff_hops]}")
+        print(f"      Confirmed egress hops : {len(egress_hops)}"
+              f"  at hops {[rec['hop'] for rec in egress_hops]}")
+        if obscured:
+            print(f"      ⚠️  Some egress boundaries may be obscured"
+                  f" by silent (*) hops")
+
+        all_paths.append({
+            "pid"        : pid,
+            "cc"         : cc,
+            "hop_records": hop_records,
+            "egress_hops": egress_hops,
+            "cliff_hops" : cliff_hops,
+        })
+
+    return all_paths, whois_queue
 
 
-# def parse_traceroute(results, probe_map):
-#     print("\n" + "═" * 60)
-#     print("TRACEROUTE RESULTS")
-#     print("═" * 60)
-
-#     # Collect (probe_id, country, list_of_(hop, ip, rtt)) for later WHOIS
-#     all_paths = []
-
-#     for r in results:
-#         pid  = r.get("prb_id")
-#         cc   = probe_map.get(pid, "??")
-#         hops = r.get("result", [])
-
-#         print(f"\n  Probe {pid:>8} ({cc}) — {len(hops)} hops toward {ENDPOINT}")
-
-#         path_hops = []
-#         for hop in hops:
-#             idx = hop.get("hop")
-#             for pkt in hop.get("result", []):
-#                 rtt      = pkt.get("rtt")
-#                 hop_addr = pkt.get("from", "*")
-#                 if not rtt or hop_addr == "*":
-#                     continue
-
-#                 # Check for DC / carrier hint
-#                 hint = ""
-#                 for kw, loc in DC_HINTS.items():
-#                     if kw in hop_addr.lower():
-#                         hint = f"  ← {loc}"
-#                         break
-
-#                 print(f"    hop {idx:>3}: {hop_addr:<45} {rtt:>7.1f} ms{hint}")
-
-#                 # Queue last 3 meaningful hops for WHOIS
-#                 path_hops.append((idx, hop_addr, rtt))
-#                 whois_queue.add(hop_addr)
-#                 break  # one packet per hop is enough
-
-#         all_paths.append((pid, cc, path_hops))
-
-#     return all_paths
+# ─────────────────────────────────────────────────────────────
+# SECTION 6 — WHOIS ENRICHMENT
+# ─────────────────────────────────────────────────────────────
+def whois_lookup(ip):
+    """
+    Query RDAP via ipwhois for a single IP address.
+    Returns a dict with ASN, ASN description, network name, and country
+    drawn from RIR registration data (APNIC / ARIN / RIPE etc.).
+    Returns an empty dict on any failure.
+    """
+    try:
+        result = IPWhois(ip).lookup_rdap(depth=1)
+        network = result.get("network", {})
+        return {
+            "asn"          : result.get("asn",              "N/A"),
+            "asn_desc"     : result.get("asn_description",  "N/A"),
+            "network_name" : network.get("name",            "N/A"),
+            "country"      : network.get("country",         "??"),
+        }
+    except Exception:
+        return {}
 
 
-# # ─────────────────────────────────────────────────────────────
-# # SECTION 5 — WHOIS / GEOIP ENRICHMENT
-# # ─────────────────────────────────────────────────────────────
+def enrich_egress_hops(all_paths):
+    """
+    Query RDAP for every confirmed egress hop IP found in all_paths.
+    Deduplicates IPs across probes so each address is queried only once.
+    Returns {ip: whois_dict} without printing anything.
+    """
+    egress_ips = set()
+    for path in all_paths:
+        for rec in path.get("egress_hops", []):
+            if rec["addr"] != "*":
+                egress_ips.add(rec["addr"])
 
-# def geoip_lookup(ip):
-#     """
-#     Query ipinfo.io for org, country, city.
-#     Returns a dict; falls back gracefully on errors.
-#     """
-#     try:
-#         r = requests.get(f"https://ipinfo.io/{ip}/json", timeout=5)
-#         if r.ok:
-#             return r.json()
-#     except Exception:
-#         pass
-#     return {}
+    whois_cache = {}
+    for ip in sorted(egress_ips):
+        whois_cache[ip] = whois_lookup(ip)
+        time.sleep(0.3)   # avoid hammering RDAP endpoints
 
-
-# def enrich_hops(whois_ips):
-#     """
-#     Run GeoIP lookups for every IP in whois_ips.
-#     Returns {ip: {org, country, city}} dict.
-#     """
-#     print("\n" + "═" * 60)
-#     print("WHOIS / GEOIP ENRICHMENT")
-#     print("═" * 60)
-#     print(f"  Querying {len(whois_ips)} unique IPs via ipinfo.io...\n")
-
-#     enriched = {}
-#     for ip in sorted(whois_ips):
-#         d = geoip_lookup(ip)
-#         enriched[ip] = {
-#             "org"     : d.get("org",     "N/A"),
-#             "country" : d.get("country", "??"),
-#             "city"    : d.get("city",    "N/A"),
-#             "region"  : d.get("region",  "N/A"),
-#         }
-#         org  = enriched[ip]["org"]
-#         city = enriched[ip]["city"]
-#         cc   = enriched[ip]["country"]
-#         print(f"  {ip:<45} {cc}  {city:<20} {org}")
-#         time.sleep(0.3)   # respect ipinfo free-tier rate limit
-
-#     return enriched
+    return whois_cache
 
 
-# def annotate_paths(all_paths, enriched):
-#     """
-#     Re-print each traceroute path, now with WHOIS context on every hop.
-#     Highlights the last hop before 66.211.168.123 as the 'handoff' point.
-#     """
-#     print("\n" + "═" * 60)
-#     print("ANNOTATED TRACEROUTE PATHS  (with WHOIS)")
-#     print("═" * 60)
+def annotate_paths(all_paths, whois_cache):
+    """
+    Print every traceroute path with full per-hop annotations.
+    For every visible hop, show the IPinfo result already stored in
+    rec['ipinfo'] during Section 5.  For confirmed egress hops,
+    additionally show the WHOIS / RDAP detail from whois_cache.
+    No new network requests are issued here.
+    """
+    print("\n" + "═" * 70)
+    print("ANNOTATED TRACEROUTE PATHS")
+    print("═" * 70)
 
-#     for pid, cc, hops in all_paths:
-#         print(f"\n  Probe {pid:>8} ({cc})")
-#         for idx, ip, rtt in hops:
-#             info = enriched.get(ip, {})
-#             org  = info.get("org",     "")
-#             city = info.get("city",    "")
-#             c    = info.get("country", "")
-#             note = f"{city}, {c}  |  {org}" if city != "N/A" else org
-#             print(f"    hop {idx:>3}: {ip:<42} {rtt:>6.1f} ms  [{note}]")
+    for path in all_paths:
+        pid  = path["pid"]
+        cc   = path["cc"]
+        hops = path["hop_records"]
 
+        egress_count = len(path["egress_hops"])
+        cliff_count  = len(path["cliff_hops"])
+
+        print(f"\n  {'─' * 62}")
+        print(f"  Probe {pid} ({cc})"
+              f"  |  cliffs: {cliff_count}"
+              f"  |  confirmed egress hops: {egress_count}")
+
+        in_star_run = False
+
+        for rec in hops:
+            hop_idx   = rec["hop"]
+            addr      = rec["addr"]
+            rtt       = rec["rtt"]
+            info      = rec.get("ipinfo")
+            is_cliff  = rec.get("cliff",  False)
+            is_egress = rec.get("egress", False)
+            delta     = rec.get("delta")
+
+            if addr == "*":
+                print(f"    hop {hop_idx:>3}: {'*':<45}    (no response)")
+                in_star_run = True
+                continue
+
+            # first visible hop after a silent run: warn if already foreign
+            if in_star_run and _is_foreign(info, probe_cc=cc):
+                print(f"          ⚠️  Egress boundary obscured"
+                      f" by preceding silent hops")
+            in_star_run = False
+
+            # build IPinfo summary
+            if info:
+                geo_tag = (f"{info.get('country', '?')} / "
+                           f"{info.get('city',    '?')} / "
+                           f"{info.get('org',     '?')}")
+            else:
+                geo_tag = "(IPinfo unavailable)"
+
+            # build flags
+            flags = ""
+            if is_cliff:
+                flags += f"  ⚡ RTT +{delta:.0f} ms"
+            if is_egress:
+                flags += "  🚨 CONFIRMED EGRESS"
+            elif is_cliff and _is_foreign(info, probe_cc=cc):
+                flags += "  ⚠️  possible egress (foreign IP at cliff)"
+
+            print(f"    hop {hop_idx:>3}: {addr:<45} {rtt:>7.1f} ms{flags}")
+            print(f"           IPinfo : {geo_tag}")
+
+            # for confirmed egress hops, append WHOIS / RDAP detail
+            if is_egress and addr in whois_cache:
+                w = whois_cache[addr]
+                print(f"           WHOIS  : "
+                      f"ASN {w.get('asn', 'N/A')} "
+                      f"({w.get('asn_desc', 'N/A')}) | "
+                      f"net={w.get('network_name', 'N/A')} | "
+                      f"cc={w.get('country', '??')}")
+
+        # per-path egress summary
+        if egress_count:
+            print(f"\n    Egress hops for probe {pid} ({cc}):")
+            for rec in path["egress_hops"]:
+                w   = whois_cache.get(rec["addr"], {})
+                asn = w.get("asn_desc", "N/A")
+                print(f"      hop {rec['hop']:>3}: {rec['addr']:<45}"
+                      f" RTT={rec['rtt']:.1f} ms  ASN={asn}")
+        else:
+            print(f"\n    No confirmed egress detected for probe {pid} ({cc}).")
 
 # # ─────────────────────────────────────────────────────────────
 # # SECTION 6 — SUMMARY REPORT
@@ -751,40 +921,36 @@ def main():
     )
     print(ping_text)
 
-    # # 5. Parse traceroute paths; populate whois_queue
-    # all_paths = parse_traceroute(trace_results, probe_map)
-    # ── placeholder: traceroute (add later) ──────────────────
-    # all_paths, trace_text = capture_output(
-    #     parse_traceroute, trace_results, probe_map
-    # )
-    # print(trace_text)
-    trace_text = ""  # remove this line when traceroute is ready
+    # 5. Parse traceroute paths
+    (all_paths, _), trace_text = capture_output(
+        parse_traceroute, trace_results, probe_map
+    )
+    print(trace_text)
 
-    # # 6. WHOIS / GeoIP enrichment for every hop IP seen
-    # enriched = enrich_hops(whois_queue)
-    # ── placeholder: WHOIS enrichment (add later) ────────────
-    # enriched, whois_text = capture_output(
-    #     enrich_hops, whois_queue
-    # )
-    # print(whois_text)
-    whois_text = ""  # remove this line when WHOIS is ready
+    # 6. WHOIS enrichment for confirmed egress hops (silent — no output)
+    whois_cache = enrich_egress_hops(all_paths)
 
-    # # 7. Re-print paths with WHOIS annotations
-    # annotate_paths(all_paths, enriched)
+    # 7. Annotated paths with full IPinfo + WHOIS context
+    _, annotate_text = capture_output(
+        annotate_paths, all_paths, whois_cache
+    )
+    print(annotate_text)
 
     # # 8. Print consolidated summary
     # print_summary(rtt_by_country, all_paths, enriched)
 
     # 9. Save structured report
-    report_fname = (f"atlas_{PROVIDER.lower().replace(' ', '_')}"
-                    f"_{PING_ID}_report.txt")
+    _domain_slug = TARGET_HOST.lower().replace(".", "_")
+    _provider_slug = PROVIDER.lower().replace(" ", "_")
+    report_fname = f"{_provider_slug}_{_domain_slug}_report.txt"
     save_report(report_fname, {
         "PING ANALYSIS"        : ping_text,
-        "TRACEROUTE ANALYSIS"  : trace_text,   # populated in future step
-        "WHOIS ENRICHMENT"     : whois_text,   # populated in future step
+        "TRACEROUTE ANALYSIS"  : trace_text,
+        "ANNOTATED PATHS (via WHOIS)"      : annotate_text,
     })
 
     # 10. Save raw results to JSON for further processing
+    json_fname = f"{_provider_slug}_{_domain_slug}.json"
     output = {
         "provider"      : PROVIDER,
         "endpoint"      : ENDPOINT,
@@ -796,10 +962,18 @@ def main():
         "trace_results" : trace_results,
         "rtt_by_country": [{"country": c, "min_rtt_ms": r}
                            for c, r in rtt_by_country],
-        "probe_records" : probe_records,   # per-probe analysis results
+        "probe_records" : probe_records,
+        "all_paths"     : [
+            {
+                "pid"        : p["pid"],
+                "cc"         : p["cc"],
+                "egress_hops": [r["addr"] for r in p["egress_hops"]],
+                "cliff_hops" : [r["hop"]  for r in p["cliff_hops"]],
+            }
+            for p in all_paths
+        ],
+        "whois_cache"   : whois_cache,
     }
-    json_fname = (f"atlas_{PROVIDER.lower().replace(' ', '_')}"
-                  f"_{PING_ID}.json")
     with open(json_fname, "w") as f:
         json.dump(output, f, indent=2)
     print(f"[*] Raw data saved to {json_fname}")

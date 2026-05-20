@@ -4,7 +4,7 @@ Python 版本：3.11
 
 环境配置：
 ```bash
-pip install requests
+pip install -r requirements.txt
 ```
 
 ## 1: 确定目标端点

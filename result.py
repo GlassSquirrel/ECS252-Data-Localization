@@ -617,6 +617,7 @@ def parse_traceroute(results, probe_map):
                 "egress_inconclusive": False,
                 "foreign_no_cliff"   : False,
                 "delta"              : None,
+                "skipped_hops"       : 0, 
                 "rdns"               : None,   # filled by enrich_rdns()
             })
 
@@ -637,9 +638,11 @@ def parse_traceroute(results, probe_map):
             prev  = visible[i - 1]
             curr  = visible[i]
             delta = curr["rtt"] - prev["rtt"]
+            skipped = curr["hop"] - prev["hop"] - 1
             if delta >= CLIFF_THRESHOLD_MS:
                 curr["cliff"] = True
                 curr["delta"] = delta
+                curr["skipped_hops"] = skipped
                 if cc == "IN":
                     if _is_foreign(curr["ipinfo"], probe_cc=cc):
                         curr["egress"] = True
@@ -840,7 +843,11 @@ def annotate_paths(all_paths: list, whois_cache: dict):
             # cliff flag is independent and stacks with any egress flag
             flags = ""
             if is_cliff:
-                flags += f"  ⚡ RTT +{delta:.0f} ms"
+                skipped = rec.get("skipped_hops", 0)
+                if skipped > 0:
+                    flags += f"  ⚡ RTT +{delta:.0f} ms (across {skipped} silent hops)"
+                else:
+                    flags += f"  ⚡ RTT +{delta:.0f} ms"
             if rec.get("egress"):
                 flags += "  🚨 CONFIRMED EGRESS"
             elif rec.get("egress_inconclusive"):

@@ -115,41 +115,62 @@ Ping ID: 170170717, Traceroute ID: 170170718
 
 *任务跑完之后测量就结束了，这是必须跑通的基础测量流程，可以得到所有 raw data。记得去 My Measurements 面板里确认一下：理想的情况是大部分 probes 都 reached their target，如果出现大批量的 did not reach target 或者 did not report (yet)，那肯定有问题。*
 
-## 4: 数据分析
-data analysis 暂时见仁见智，我写的仅供参考。
+## 4: Data Analysis
+The analysis script (`result.py`) is organized into seven sequential sections. Each section has a single responsibility and passes its output directly to the next.
 
-脚本分为六个独立的部分，逻辑是线性串联的：
-
-**Section 1 — Atlas Helpers**：所有和RIPE API通信的底层函数，包括轮询状态、下载结果、解析探针国家。
-
-**Section 2 — RTT Logic**：核心公式 `d ≤ (RTT × 200) / 2` 和 Anycast 判断，把距离阈值统一定义在 `THRESHOLDS` 列表里，方便你们之后换其他国家时修改。
-
-**Section 3 & 4 — Ping / Traceroute**：分析阶段，Traceroute 解析时会把所有出现过的 hop IP 加入 `whois_queue`，自动为后续 WHOIS 做准备，不需要手动维护 IP 列表。
-
-**Section 5 — WHOIS / GeoIP**：批量查询 `ipinfo.io`，然后 `annotate_paths()` 把 WHOIS 结果叠加回每条 traceroute 路径上，让你直接看到每个 hop 属于哪个 AS、在哪个城市。
-
-**Section 6 — Summary**：根据 IN/US RTT 比值和印度路径的最后几跳，自动生成一段面向 RBI mandate 的 policy implication 文字，可以直接引用进报告。
-
-运行前只需要改最顶部的几个变量，其余逻辑完全复用。
-
+**Configuration**
+Before running, edit the six variables at the top of the CONFIG block: `API_KEY`, `PING_ID`, `TRACE_ID`, `PROVIDER`, `ENDPOINT`, and `TARGET_HOST`. Everything else is fully reusable across providers and endpoints.
 ```python
 # ─────────────────────────────────────────────────────────────
 # CONFIG — edit these before running
 # ─────────────────────────────────────────────────────────────
-API_KEY = "your_atlas_api_key"
-PING_ID = 170170717  # 来自第3步里的测量结果
-TRACE_ID = 170170718  # 来自第3步里的测量结果
+API_KEY   = "Your_RIPE_API_Key"  # to be changed
+PING_ID   = 171964292   # to be changed
+TRACE_ID  = 171964294   # to be changed
 
 # Provider label used in report output
-# 用于输出报告
-PROVIDER = "PayPal"
-ENDPOINT = "api.paypal.com → 66.211.168.123"
+PROVIDER  = "Payment Service Provider"  # to be changed
+ENDPOINT  = "CND: static.mobikwik.com"   # to be changed
+TARGET_HOST = "static.mobikwik.com"   # to be changed
 ```
 
-运行`result.py`:
+**Section 0 — Output Utilities**
+Two helper functions used throughout the script. `capture_output()` redirects stdout into a string buffer, allowing any function's printed output to be captured and later written to the report file without duplicating print calls. `save_report()` writes a structured text file with a header block and named sections, one per analysis stage.
 
+**Section 1 — Atlas Helpers**
+Low-level functions for communicating with the RIPE Atlas REST API. `atlas_get()` handles authenticated GET requests. `fetch_results()` downloads all probe results for a given measurement ID. `fetch_probe_countries()` resolves each probe ID to a country code by querying probe metadata directly, which is more reliable than reading the `probes_scheduled` field from the measurement object.
+
+**Section 2 — Geometry and GeoIP Helpers**
+The physical constraint formula `d ≤ (RTT × 200 km/ms) / 2` is implemented in `rtt_to_max_dist()`. `haversine()` computes great-circle distances between two coordinate pairs. `get_ip_info()` queries ipinfo.io for a given IP's claimed location and organization, and is reused across both the ping and traceroute sections. `fetch_probe_location()` retrieves each probe's coordinates from RIPE Atlas metadata, noting that RIPE Atlas GeoJSON stores coordinates as `[longitude, latitude]` rather than the more common reverse order.
+
+**Section 3 — Ping Analysis**
+`analyze_ping()` processes ping results probe by probe. For each probe it computes the RTT-derived distance upper bound, fetches the probe's coordinates and the destination IP's GeoIP-claimed location, then compares the two distances. If the GeoIP-claimed location falls within the RTT bound the result is marked CONSISTENT; otherwise CONTRADICTED. These per-probe verdicts feed directly into Section 4. 
+
+**Section 4 — Anycast Detection**
+`anycast_verdict()` is called at the end of this section and combines three independent signals to determine whether the endpoint uses Anycast. 
+- Signal A checks whether different regions resolve to different destination IPs. 
+- Signal B looks at the pattern of CONSISTENT and CONTRADICTED results across all regions, distinguishing Cloudflare-style deployments (IP registered far away, local PoPs serve traffic everywhere) from Akamai-style deployments (accurate GeoIP per region). 
+- Signal C compares each probe's actual RTT against the expected RTT derived from the GeoIP distance. At least two of the three signals must point to Anycast for the verdict to be confirmed.
+
+At least two of the three signals must point to Anycast for the verdict to be confirmed. 
+
+**Section 5 — Traceroute Analysis**
+`parse_traceroute()` classifies each hop on Indian probe paths into one of four categories: confirmed egress (RTT cliff and foreign IP coincide at the same hop), egress inconclusive (RTT cliff but IPinfo still shows a domestic location), foreign without cliff (foreign IP but no RTT spike, suggesting a low-latency international link or an inaccurate IPinfo label), or no anomaly. RTT cliff detection compares consecutive visible hops; any delta above 20 ms is flagged. Egress classification is only performed for Indian probes; overseas probe paths record cliffs for Anycast cross-validation only. Progress is printed to the terminal during processing but not written to the report.
+
+**Section 6 — WHOIS and rDNS Enrichment**
+
+`enrich_rdns()` performs reverse DNS lookups on inconclusive and foreign-no-cliff hops, using router hostnames as independent geographic hints (e.g. `cr1.mum01.airtel.net` suggests Mumbai). Confirmed egress hops are skipped because cliff and foreign IP together already constitute sufficient evidence. 
+
+`enrich_whois()` queries RDAP via the `ipwhois` library for all egress-related IPs, retrieving ASN, ASN description, network name, and registration country from authoritative RIR records (APNIC, ARIN, RIPE). Unlike ipinfo.io, RIR data reflects the legal and administrative ownership of an IP block, which is more relevant for policy-level compliance judgments.
+
+**Section 7 — Traceroute Annotation**
+`annotate_paths()` assembles the final per-hop output without issuing any new network requests. All data is read from `rec['ipinfo']` populated in Section 5, `rec['rdns']` populated by `enrich_rdns()`, and `whois_cache` returned by `enrich_whois()`. Every visible hop is printed with its IPinfo summary. Confirmed egress hops additionally show the WHOIS result. Inconclusive and foreign-no-cliff hops show both WHOIS and rDNS. A per-path summary at the end of each probe's output lists all egress-related hops with their ASN and, where available, rDNS hostname. The captured output from this function is written into the structured report alongside the ping analysis.
+
+### Command
+To view the report, run:
 ```bash
 python result.py
 ```
-
-最终会把所有原始数据保存成 `atlas_paypal_170170717.json`，方便后续做跨服务商的横向对比。
+Each time will generate two files:
+- `"mobikwik_static_mobikwik_com.json"` contains all the raw data of Ping and Traceroute measurement;
+- `"mobikwik_static_mobikwik_com_report.txt"` contains the report for analysis.

@@ -24,12 +24,12 @@ import socket
 # CONFIG — edit these before running
 # ─────────────────────────────────────────────────────────────
 API_KEY   = "Your_RIPE_Atlas_API_Key"  # to be changed
-PING_ID   = 171964292   # to be changed
-TRACE_ID  = 171964294   # to be changed
+PING_ID   = 173126494   # to be changed
+TRACE_ID  = 173126495   # to be changed
 
 # Provider label used in report output
 PROVIDER  = "MobiKwik"  # to be changed
-ENDPOINT  = "CND: static.mobikwik.com"   # to be changed
+ENDPOINT  = "CDN: static.mobikwik.com"   # to be changed
 TARGET_HOST = "static.mobikwik.com"   # 纯domain，用于文件命名, to be changed
 
 # ─────────────────────────────────────────────────────────────
@@ -605,7 +605,9 @@ def parse_traceroute(results, probe_map):
         # ── Pass 1: collect minimum RTT and address for each hop ─
         hop_records = []
         for hop in hops:
-            idx       = hop.get("hop")
+            idx = hop.get("hop")
+            if idx is None:
+                continue   # skip malformed hop entries with no hop index
             rtt, addr = _best_rtt_for_hop(hop)
             hop_records.append({
                 "hop"                : idx,
@@ -633,7 +635,7 @@ def parse_traceroute(results, probe_map):
         # ── Pass 3: RTT cliff detection and egress classification ─
         # egress classification is only meaningful for IN probes;
         # for overseas probes, cliffs are recorded only for Anycast cross-validation
-        visible = [rec for rec in hop_records if rec["rtt"] is not None]
+        visible = [rec for rec in hop_records if rec["rtt"] is not None and rec["hop"] != 255]
         for i in range(1, len(visible)):
             prev  = visible[i - 1]
             curr  = visible[i]
@@ -652,6 +654,8 @@ def parse_traceroute(results, probe_map):
         # foreign-without-cliff classification: IN probes only
         if cc == "IN":
             for rec in hop_records:
+                if (rec["hop"] == 255):
+                    continue   # skip destination IP, not an intermediate routing hop
                 if (not rec["cliff"]
                         and rec["addr"] != "*"
                         and _is_foreign(rec["ipinfo"], probe_cc=cc)):
@@ -669,28 +673,38 @@ def parse_traceroute(results, probe_map):
         inconclusive_hops = [rec for rec in hop_records if rec["egress_inconclusive"]]
         foreign_nc_hops   = [rec for rec in hop_records if rec["foreign_no_cliff"]]
 
-        # check whether any silent-hop run conceals an egress boundary
         obscured = False
         for i, rec in enumerate(hop_records):
             if rec["addr"] != "*":
                 continue
             for nxt in hop_records[i + 1 : i + 3]:
+                if nxt["hop"] == 255:
+                    continue   # destination IP is not an egress indicator
                 if _is_foreign(nxt.get("ipinfo"), probe_cc=cc):
                     obscured = True
                     break
 
-        print(f"\n    Summary for probe {pid} ({cc}):")
-        print(f"      RTT cliffs detected        : {len(cliff_hops)}"
-              f"  at hops {[rec['hop'] for rec in cliff_hops]}")
-        print(f"      Confirmed egress hops      : {len(egress_hops)}"
-              f"  at hops {[rec['hop'] for rec in egress_hops]}")
-        print(f"      Inconclusive (cliff only)  : {len(inconclusive_hops)}"
-              f"  at hops {[rec['hop'] for rec in inconclusive_hops]}")
-        print(f"      Foreign no-cliff           : {len(foreign_nc_hops)}"
-              f"  at hops {[rec['hop'] for rec in foreign_nc_hops]}")
+        # build summary string instead of printing directly
+        summary_lines = [
+            f"\n    Summary for probe {pid} ({cc}):",
+            f"      RTT cliffs detected        : {len(cliff_hops)}"
+            f"  at hops {[rec['hop'] for rec in cliff_hops]}",
+            f"      Confirmed egress hops      : {len(egress_hops)}"
+            f"  at hops {[rec['hop'] for rec in egress_hops]}",
+            f"      Inconclusive (cliff only)  : {len(inconclusive_hops)}"
+            f"  at hops {[rec['hop'] for rec in inconclusive_hops]}",
+            f"      Foreign no-cliff           : {len(foreign_nc_hops)}"
+            f"  at hops {[rec['hop'] for rec in foreign_nc_hops]}",
+        ]
         if obscured:
-            print(f"      ⚠️  Some egress boundaries may be obscured"
-                  f" by silent (*) hops")
+            summary_lines.append(
+                f"      ⚠️  Some egress boundaries may be obscured"
+                f" by silent (*) hops"
+            )
+        probe_summary = "\n".join(summary_lines)
+
+        # still print to terminal for progress monitoring
+        print(probe_summary, flush=True)
 
         all_paths.append({
             "pid"        : pid,
@@ -698,6 +712,7 @@ def parse_traceroute(results, probe_map):
             "hop_records": hop_records,
             "egress_hops": egress_hops,
             "cliff_hops" : cliff_hops,
+            "summary"    : probe_summary,   # store for annotate_paths
         })
 
     return all_paths, whois_queue
@@ -917,6 +932,11 @@ def annotate_paths(all_paths: list, whois_cache: dict):
 
         if not confirmed and not inconclusive and not foreign_nc:
             print(f"\n    No egress evidence detected for probe {pid} ({cc}).")
+
+        # print classification summary from parse_traceroute for all probes
+        summary = path.get("summary", "")
+        if summary:
+            print(summary)
 
 # ─────────────────────────────────────────────────────────────
 # MAIN

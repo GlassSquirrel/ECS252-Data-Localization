@@ -1,0 +1,3587 @@
+{
+  "provider": "PayPal",
+  "endpoint": "Auth: checkout.paypal.com",
+  "ping_msm_id": 175357175,
+  "trace_msm_id": 175357176,
+  "run_at": "2026-05-29 01:44 UTC",
+  "probe_map": {
+    "7616": "NL",
+    "1010593": "IN",
+    "62949": "IN",
+    "62342": "US",
+    "53448": "IN",
+    "62287": "FR",
+    "1002932": "IN",
+    "60308": "US",
+    "51191": "DE",
+    "25051": "SG",
+    "54877": "US",
+    "62302": "IN"
+  },
+  "ping_results": [
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 35,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 49.434249,
+      "af": 4,
+      "dst_addr": "151.101.131.1",
+      "src_addr": "10.0.160.20",
+      "proto": "ICMP",
+      "ttl": 58,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 40.602337
+        },
+        {
+          "rtt": 45.583775
+        },
+        {
+          "rtt": 15.619508
+        },
+        {
+          "rtt": 20.646805
+        },
+        {
+          "rtt": 15.72233
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 15.619508,
+      "max": 45.583775,
+      "avg": 27.634951,
+      "msm_id": 175357175,
+      "prb_id": 1002932,
+      "timestamp": 1780018930,
+      "msm_name": "Ping",
+      "from": "106.219.218.65",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018946
+    },
+    {
+      "fw": 5120,
+      "mver": "2.6.4",
+      "lts": 58,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 68.061622,
+      "af": 4,
+      "dst_addr": "151.101.159.1",
+      "src_addr": "172.28.0.2",
+      "proto": "ICMP",
+      "ttl": 58,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 8.402978
+        },
+        {
+          "rtt": 8.268996
+        },
+        {
+          "rtt": 8.561598
+        },
+        {
+          "rtt": 8.713499
+        },
+        {
+          "rtt": 8.717619
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 8.268996,
+      "max": 8.717619,
+      "avg": 8.532938,
+      "msm_id": 175357175,
+      "prb_id": 1010593,
+      "timestamp": 1780018930,
+      "msm_name": "Ping",
+      "from": "49.205.217.86",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018938
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 39,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 7.12378,
+      "af": 4,
+      "dst_addr": "199.232.47.1",
+      "src_addr": "192.168.1.118",
+      "proto": "ICMP",
+      "ttl": 51,
+      "size": 64,
+      "result": [
+        {
+          "x": "*"
+        },
+        {
+          "rtt": 5.894785,
+          "ttl": 51
+        },
+        {
+          "rtt": 5.725881
+        },
+        {
+          "rtt": 5.689516
+        },
+        {
+          "rtt": 5.780591
+        }
+      ],
+      "dup": 0,
+      "rcvd": 4,
+      "sent": 5,
+      "min": 5.689516,
+      "max": 5.894785,
+      "avg": 5.7726932500000006,
+      "msm_id": 175357175,
+      "prb_id": 25051,
+      "timestamp": 1780018931,
+      "msm_name": "Ping",
+      "from": "116.14.228.11",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018962
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 5,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 16.900791,
+      "af": 4,
+      "dst_addr": "146.75.119.1",
+      "src_addr": "192.168.101.56",
+      "proto": "ICMP",
+      "ttl": 60,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 11.896833
+        },
+        {
+          "rtt": 10.718959
+        },
+        {
+          "rtt": 12.867583
+        },
+        {
+          "rtt": 10.993541
+        },
+        {
+          "rtt": 10.493834
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 10.493834,
+      "max": 12.867583,
+      "avg": 11.39415,
+      "msm_id": 175357175,
+      "prb_id": 51191,
+      "timestamp": 1780018930,
+      "msm_name": "Ping",
+      "from": "79.247.194.114",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018930
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 17,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 124.067375,
+      "af": 4,
+      "dst_addr": "151.101.211.1",
+      "src_addr": "192.168.2.180",
+      "proto": "ICMP",
+      "ttl": 58,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 34.196417
+        },
+        {
+          "rtt": 35.093292
+        },
+        {
+          "rtt": 33.035583
+        },
+        {
+          "rtt": 34.41
+        },
+        {
+          "rtt": 34.555791
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 33.035583,
+      "max": 35.093292,
+      "avg": 34.2582166,
+      "msm_id": 175357175,
+      "prb_id": 53448,
+      "timestamp": 1780018930,
+      "msm_name": "Ping",
+      "from": "117.206.128.58",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018965
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 23,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 16.50425,
+      "af": 4,
+      "dst_addr": "151.101.3.1",
+      "src_addr": "192.168.50.40",
+      "proto": "ICMP",
+      "ttl": 57,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 23.255167
+        },
+        {
+          "rtt": 23.725708
+        },
+        {
+          "rtt": 33.527292
+        },
+        {
+          "rtt": 30.208708
+        },
+        {
+          "rtt": 29.319959
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 23.255167,
+      "max": 33.527292,
+      "avg": 28.0073668,
+      "msm_id": 175357175,
+      "prb_id": 54877,
+      "timestamp": 1780018929,
+      "msm_name": "Ping",
+      "from": "69.243.236.32",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018938
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 8,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 11.628834,
+      "af": 4,
+      "dst_addr": "151.101.47.1",
+      "src_addr": "192.168.1.166",
+      "proto": "ICMP",
+      "ttl": 60,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 11.232329
+        },
+        {
+          "rtt": 7.991559
+        },
+        {
+          "rtt": 10.095214
+        },
+        {
+          "rtt": 8.703684
+        },
+        {
+          "rtt": 8.9389
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 7.991559,
+      "max": 11.232329,
+      "avg": 9.3923372,
+      "msm_id": 175357175,
+      "prb_id": 60308,
+      "timestamp": 1780018930,
+      "msm_name": "Ping",
+      "from": "96.255.50.172",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018938
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 9,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 8.702892,
+      "af": 4,
+      "dst_addr": "199.232.83.1",
+      "src_addr": "192.168.1.68",
+      "proto": "ICMP",
+      "ttl": 58,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 8.722253
+        },
+        {
+          "rtt": 6.821694
+        },
+        {
+          "rtt": 10.526245
+        },
+        {
+          "rtt": 10.058125
+        },
+        {
+          "rtt": 10.369991
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 6.821694,
+      "max": 10.526245,
+      "avg": 9.299661599999999,
+      "msm_id": 175357175,
+      "prb_id": 62287,
+      "timestamp": 1780018929,
+      "msm_name": "Ping",
+      "from": "87.89.147.161",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018962
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 7,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 14994.913607,
+      "af": 4,
+      "proto": "ICMP",
+      "size": 64,
+      "result": [
+        {
+          "error": "dns resolution failed: non-recoverable failure in name resolution"
+        }
+      ],
+      "dup": 0,
+      "rcvd": 0,
+      "sent": 0,
+      "min": -1,
+      "max": -1,
+      "avg": -1,
+      "msm_id": 175357175,
+      "prb_id": 62302,
+      "timestamp": 1780018940,
+      "msm_name": "Ping",
+      "from": "49.36.144.94",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018940
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 5,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 43.746166,
+      "af": 4,
+      "dst_addr": "199.232.135.1",
+      "src_addr": "192.168.0.38",
+      "proto": "ICMP",
+      "ttl": 55,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 33.088851
+        },
+        {
+          "rtt": 16.886458
+        },
+        {
+          "rtt": 24.252506
+        },
+        {
+          "rtt": 17.164723
+        },
+        {
+          "rtt": 24.298029
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 16.886458,
+      "max": 33.088851,
+      "avg": 23.138113399999998,
+      "msm_id": 175357175,
+      "prb_id": 62342,
+      "timestamp": 1780018929,
+      "msm_name": "Ping",
+      "from": "97.200.77.37",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018934
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 3,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 24.353886,
+      "af": 4,
+      "dst_addr": "151.101.159.1",
+      "src_addr": "192.168.1.2",
+      "proto": "ICMP",
+      "ttl": 60,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 15.69357
+        },
+        {
+          "rtt": 17.786361
+        },
+        {
+          "rtt": 18.062471
+        },
+        {
+          "rtt": 15.397538
+        },
+        {
+          "rtt": 15.085503
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 15.085503,
+      "max": 18.062471,
+      "avg": 16.4050886,
+      "msm_id": 175357175,
+      "prb_id": 62949,
+      "timestamp": 1780018930,
+      "msm_name": "Ping",
+      "from": "122.171.22.219",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018931
+    },
+    {
+      "fw": 5090,
+      "mver": "2.6.4",
+      "lts": 4,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 4.61318,
+      "af": 4,
+      "dst_addr": "151.101.67.1",
+      "src_addr": "145.220.0.55",
+      "proto": "ICMP",
+      "ttl": 61,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 0.4407
+        },
+        {
+          "rtt": 0.459428
+        },
+        {
+          "rtt": 0.440099
+        },
+        {
+          "rtt": 0.467961
+        },
+        {
+          "rtt": 0.466578
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 0.440099,
+      "max": 0.467961,
+      "avg": 0.4549532,
+      "msm_id": 175357175,
+      "prb_id": 7616,
+      "timestamp": 1780018929,
+      "msm_name": "Ping",
+      "from": "145.220.0.55",
+      "type": "ping",
+      "group_id": 175357175,
+      "step": null,
+      "stored_timestamp": 1780018930
+    }
+  ],
+  "trace_results": [
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 50,
+      "endtime": 1780018945,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 49.33674,
+      "dst_addr": "151.101.131.1",
+      "src_addr": "10.0.160.20",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.351
+            },
+            {
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.199
+            },
+            {
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.19
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.464
+            },
+            {
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.981
+            },
+            {
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.496
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "192.168.182.33",
+              "ttl": 62,
+              "size": 92,
+              "rtt": 42.594,
+              "itos": 128
+            },
+            {
+              "late": 10,
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 68,
+              "edst": "193.0.0.164"
+            },
+            {
+              "late": 9,
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 68,
+              "edst": "193.0.0.164"
+            },
+            {
+              "late": 8,
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 68,
+              "edst": "193.0.0.164"
+            },
+            {
+              "late": 7,
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 68,
+              "edst": "193.0.0.164"
+            },
+            {
+              "late": 6,
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 68,
+              "edst": "193.0.0.164"
+            },
+            {
+              "late": 5,
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 68,
+              "edst": "193.0.0.164"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "192.168.182.33",
+              "ttl": 62,
+              "size": 92,
+              "rtt": 28.051,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "152.52.77.46",
+              "ttl": 61,
+              "size": 92,
+              "rtt": 15.376,
+              "itos": 128
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "152.52.77.46",
+              "ttl": 61,
+              "size": 92,
+              "rtt": 24.003,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "152.52.77.45",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 16.336,
+              "itos": 128
+            },
+            {
+              "from": "152.52.77.45",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 14.427,
+              "itos": 128
+            },
+            {
+              "from": "152.52.77.45",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 14.129,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "182.79.235.253",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 16.78,
+              "itos": 128
+            },
+            {
+              "from": "182.79.235.253",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 18.485,
+              "itos": 128
+            },
+            {
+              "from": "182.79.235.253",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 14.956,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "from": "167.82.128.102",
+              "ttl": 56,
+              "size": 92,
+              "rtt": 16.571,
+              "itos": 128
+            },
+            {
+              "from": "167.82.128.102",
+              "ttl": 56,
+              "size": 92,
+              "rtt": 19.25,
+              "itos": 128
+            },
+            {
+              "from": "167.82.128.102",
+              "ttl": 56,
+              "size": 92,
+              "rtt": 15.444,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "from": "151.101.131.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1300
+                }
+              ],
+              "rtt": 17.432
+            },
+            {
+              "from": "151.101.131.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1300
+                }
+              ],
+              "rtt": 15.386
+            },
+            {
+              "from": "151.101.131.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1300
+                }
+              ],
+              "rtt": 14.496
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 1002932,
+      "timestamp": 1780018925,
+      "msm_name": "Traceroute",
+      "from": "106.219.218.65",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018946
+    },
+    {
+      "fw": 5120,
+      "mver": "2.6.4",
+      "lts": 6,
+      "endtime": 1780018937,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 67.734731,
+      "dst_addr": "151.101.159.1",
+      "src_addr": "172.28.0.2",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "172.28.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.112
+            },
+            {
+              "from": "172.28.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.087
+            },
+            {
+              "from": "172.28.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.057
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "10.100.10.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.322
+            },
+            {
+              "from": "10.100.10.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.245
+            },
+            {
+              "from": "10.100.10.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.269
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "122.179.4.1",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 7.452
+            },
+            {
+              "from": "122.179.4.1",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 15.951
+            },
+            {
+              "from": "122.179.4.1",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 3.37
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "125.18.117.221",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 2.956
+            },
+            {
+              "from": "125.18.117.221",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 4.28
+            },
+            {
+              "from": "125.18.117.221",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 3.533
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "116.119.57.97",
+              "ttl": 248,
+              "size": 148,
+              "rtt": 10.521,
+              "icmpext": {
+                "version": 2,
+                "rfc4884": 0,
+                "obj": [
+                  {
+                    "class": 1,
+                    "type": 1,
+                    "mpls": [
+                      {
+                        "label": 37337,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 7,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 448521,
+                        "exp": 0,
+                        "s": 1,
+                        "ttl": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "from": "116.119.57.97",
+              "ttl": 248,
+              "size": 148,
+              "rtt": 9.735,
+              "icmpext": {
+                "version": 2,
+                "rfc4884": 0,
+                "obj": [
+                  {
+                    "class": 1,
+                    "type": 1,
+                    "mpls": [
+                      {
+                        "label": 37337,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 7,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 448521,
+                        "exp": 0,
+                        "s": 1,
+                        "ttl": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "from": "116.119.57.97",
+              "ttl": 248,
+              "size": 148,
+              "rtt": 10.035,
+              "icmpext": {
+                "version": 2,
+                "rfc4884": 0,
+                "obj": [
+                  {
+                    "class": 1,
+                    "type": 1,
+                    "mpls": [
+                      {
+                        "label": 37337,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 7,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 448521,
+                        "exp": 0,
+                        "s": 1,
+                        "ttl": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "116.119.109.245",
+              "ttl": 249,
+              "size": 148,
+              "rtt": 10.67,
+              "icmpext": {
+                "version": 2,
+                "rfc4884": 0,
+                "obj": [
+                  {
+                    "class": 1,
+                    "type": 1,
+                    "mpls": [
+                      {
+                        "label": 12776,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 7,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 2
+                      },
+                      {
+                        "label": 448521,
+                        "exp": 0,
+                        "s": 1,
+                        "ttl": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "from": "116.119.109.245",
+              "ttl": 249,
+              "size": 148,
+              "rtt": 10.092,
+              "icmpext": {
+                "version": 2,
+                "rfc4884": 0,
+                "obj": [
+                  {
+                    "class": 1,
+                    "type": 1,
+                    "mpls": [
+                      {
+                        "label": 12776,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 7,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 2
+                      },
+                      {
+                        "label": 448521,
+                        "exp": 0,
+                        "s": 1,
+                        "ttl": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "from": "116.119.109.245",
+              "ttl": 249,
+              "size": 148,
+              "rtt": 9.646,
+              "icmpext": {
+                "version": 2,
+                "rfc4884": 0,
+                "obj": [
+                  {
+                    "class": 1,
+                    "type": 1,
+                    "mpls": [
+                      {
+                        "label": 12776,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 1
+                      },
+                      {
+                        "label": 7,
+                        "exp": 0,
+                        "s": 0,
+                        "ttl": 2
+                      },
+                      {
+                        "label": 448521,
+                        "exp": 0,
+                        "s": 1,
+                        "ttl": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "from": "116.119.161.143",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 9.156
+            },
+            {
+              "from": "116.119.161.143",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 9.047
+            },
+            {
+              "from": "116.119.161.143",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 8.813
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "from": "167.82.128.128",
+              "ttl": 56,
+              "size": 88,
+              "rtt": 9.524
+            },
+            {
+              "from": "167.82.128.128",
+              "ttl": 56,
+              "size": 88,
+              "rtt": 9.372
+            },
+            {
+              "from": "167.82.128.128",
+              "ttl": 56,
+              "size": 88,
+              "rtt": 9.341
+            }
+          ]
+        },
+        {
+          "hop": 10,
+          "result": [
+            {
+              "from": "151.101.159.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 8.39
+            },
+            {
+              "from": "151.101.159.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 8.936
+            },
+            {
+              "from": "151.101.159.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 8.98
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 1010593,
+      "timestamp": 1780018925,
+      "msm_name": "Traceroute",
+      "from": "49.205.217.86",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018938
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 11,
+      "endtime": 1780019010,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 8.8362,
+      "dst_addr": "199.232.47.1",
+      "src_addr": "192.168.1.118",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.1.254",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.619
+            },
+            {
+              "from": "192.168.1.254",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.615
+            },
+            {
+              "from": "192.168.1.254",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.521
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "116.14.229.254",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 1.688
+            },
+            {
+              "from": "116.14.229.254",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 1.455
+            },
+            {
+              "from": "116.14.229.254",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 1.341
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "165.21.193.21",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 2.409
+            },
+            {
+              "from": "165.21.193.21",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 1.914
+            },
+            {
+              "from": "165.21.193.21",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 1.781
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 255,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": false,
+      "msm_id": 175357176,
+      "prb_id": 25051,
+      "timestamp": 1780018926,
+      "msm_name": "Traceroute",
+      "from": "116.14.228.11",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780019011
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 0,
+      "endtime": 1780018925,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 12.509334,
+      "dst_addr": "146.75.119.1",
+      "src_addr": "192.168.101.56",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.101.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.748
+            },
+            {
+              "from": "192.168.101.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.26
+            },
+            {
+              "from": "192.168.101.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.448
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "62.155.247.68",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 7.751
+            },
+            {
+              "from": "62.155.247.68",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 6.882
+            },
+            {
+              "from": "62.155.247.68",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 8.649
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "193.158.121.94",
+              "ttl": 252,
+              "size": 68,
+              "rtt": 12.316
+            },
+            {
+              "from": "193.158.121.94",
+              "ttl": 252,
+              "size": 68,
+              "rtt": 12.4
+            },
+            {
+              "from": "193.158.121.94",
+              "ttl": 252,
+              "size": 68,
+              "rtt": 12.02
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "217.243.178.105",
+              "ttl": 59,
+              "size": 92,
+              "rtt": 11.592
+            },
+            {
+              "from": "217.243.178.105",
+              "ttl": 59,
+              "size": 92,
+              "rtt": 11.938
+            },
+            {
+              "from": "217.243.178.105",
+              "ttl": 59,
+              "size": 92,
+              "rtt": 11.83
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "146.75.119.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1378
+                }
+              ],
+              "rtt": 11.957
+            },
+            {
+              "from": "146.75.119.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1378
+                }
+              ],
+              "rtt": 11.485
+            },
+            {
+              "from": "146.75.119.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1378
+                }
+              ],
+              "rtt": 11.528
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 51191,
+      "timestamp": 1780018925,
+      "msm_name": "Traceroute",
+      "from": "79.247.194.114",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018930
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 14,
+      "endtime": 1780018986,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 95.195167,
+      "dst_addr": "104.18.34.93",
+      "src_addr": "192.168.2.180",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.2.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.456
+            },
+            {
+              "from": "192.168.2.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.999
+            },
+            {
+              "from": "192.168.2.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.105
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "117.241.78.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 2.386
+            },
+            {
+              "from": "117.241.78.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 3.552
+            },
+            {
+              "from": "117.241.78.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 1.893
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "10.219.29.41",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 1.78,
+              "ittl": 0
+            },
+            {
+              "from": "10.219.29.41",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 2.95,
+              "ittl": 0
+            },
+            {
+              "from": "10.219.29.41",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 2.423,
+              "ittl": 0
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "10.219.29.42",
+              "ttl": 252,
+              "size": 68,
+              "rtt": 2.125
+            },
+            {
+              "from": "10.219.29.42",
+              "ttl": 252,
+              "size": 68,
+              "rtt": 3.861
+            },
+            {
+              "from": "10.219.29.42",
+              "ttl": 252,
+              "size": 68,
+              "rtt": 3.457
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 255,
+          "result": [
+            {
+              "from": "104.18.34.93",
+              "ttl": 55,
+              "size": 4,
+              "tos": 32,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 51.329
+            },
+            {
+              "from": "104.18.34.93",
+              "ttl": 55,
+              "size": 4,
+              "tos": 32,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 49.844
+            },
+            {
+              "from": "104.18.34.93",
+              "ttl": 55,
+              "size": 4,
+              "tos": 32,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 50.07
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 53448,
+      "timestamp": 1780018925,
+      "msm_name": "Traceroute",
+      "from": "117.206.128.58",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018987
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 31,
+      "endtime": 1780018937,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 11.789333,
+      "dst_addr": "151.101.195.1",
+      "src_addr": "192.168.50.40",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.50.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.383
+            },
+            {
+              "from": "192.168.50.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.73
+            },
+            {
+              "from": "192.168.50.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.642
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "10.60.25.58",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 17.775,
+              "itos": 32
+            },
+            {
+              "from": "10.60.25.58",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 18.542,
+              "itos": 32
+            },
+            {
+              "from": "10.60.25.58",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 8.36,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "96.108.33.69",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 12.021,
+              "itos": 32
+            },
+            {
+              "from": "96.108.33.69",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 12.035,
+              "itos": 32
+            },
+            {
+              "from": "96.108.33.69",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 11.999,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "68.86.181.17",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 18.345,
+              "itos": 32
+            },
+            {
+              "from": "68.86.181.17",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 11.072,
+              "itos": 32
+            },
+            {
+              "from": "68.86.181.17",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 13.184,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "96.110.41.181",
+              "ttl": 250,
+              "size": 68,
+              "rtt": 21.928,
+              "itos": 32
+            },
+            {
+              "from": "96.110.41.181",
+              "ttl": 250,
+              "size": 68,
+              "rtt": 19.737,
+              "itos": 32
+            },
+            {
+              "from": "96.110.41.181",
+              "ttl": 250,
+              "size": 68,
+              "rtt": 20.618,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "96.110.38.230",
+              "ttl": 250,
+              "size": 68,
+              "rtt": 29.478,
+              "itos": 32
+            },
+            {
+              "from": "96.110.38.230",
+              "ttl": 250,
+              "size": 68,
+              "rtt": 16.074,
+              "itos": 32
+            },
+            {
+              "from": "96.110.38.230",
+              "ttl": 250,
+              "size": 68,
+              "rtt": 21.311,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "from": "151.101.195.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 18.902
+            },
+            {
+              "from": "151.101.195.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 26.965
+            },
+            {
+              "from": "151.101.195.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 21.043
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 54877,
+      "timestamp": 1780018924,
+      "msm_name": "Traceroute",
+      "from": "69.243.236.32",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018938
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 15,
+      "endtime": 1780018937,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 10.773818,
+      "dst_addr": "151.101.47.1",
+      "src_addr": "192.168.1.166",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.944
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.318
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.23
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "71.163.164.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 3.166
+            },
+            {
+              "from": "71.163.164.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 2.426
+            },
+            {
+              "from": "71.163.164.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 3.091
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "100.41.24.198",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 4.35
+            },
+            {
+              "from": "100.41.24.198",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 6.624
+            },
+            {
+              "from": "100.41.24.198",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 3.672
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "208.222.12.186",
+              "ttl": 60,
+              "size": 88,
+              "rtt": 9.689
+            },
+            {
+              "from": "208.222.12.186",
+              "ttl": 60,
+              "size": 88,
+              "rtt": 9.063
+            },
+            {
+              "from": "208.222.12.186",
+              "ttl": 60,
+              "size": 88,
+              "rtt": 9.726
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "151.101.47.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1396
+                }
+              ],
+              "rtt": 9.661
+            },
+            {
+              "from": "151.101.47.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1396
+                }
+              ],
+              "rtt": 9.522
+            },
+            {
+              "from": "151.101.47.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1396
+                }
+              ],
+              "rtt": 9.664
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 60308,
+      "timestamp": 1780018925,
+      "msm_name": "Traceroute",
+      "from": "96.255.50.172",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018938
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 49,
+      "endtime": 1780018969,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 7.498631,
+      "dst_addr": "199.232.83.1",
+      "src_addr": "192.168.1.68",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.1.254",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.199
+            },
+            {
+              "from": "192.168.1.254",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.906
+            },
+            {
+              "from": "192.168.1.254",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.381
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "212.194.170.38",
+              "ttl": 62,
+              "size": 88,
+              "rtt": 3.256,
+              "ittl": 0
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "212.194.170.0",
+              "ttl": 250,
+              "size": 140,
+              "rtt": 9.441,
+              "ittl": 2
+            },
+            {
+              "from": "212.194.170.0",
+              "ttl": 250,
+              "size": 140,
+              "rtt": 9.374,
+              "ittl": 2
+            },
+            {
+              "from": "212.194.170.0",
+              "ttl": 250,
+              "size": 140,
+              "rtt": 9.625,
+              "ittl": 2
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "199.232.83.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 9.221
+            },
+            {
+              "from": "199.232.83.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 9.376
+            },
+            {
+              "from": "199.232.83.1",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 9.666
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 62287,
+      "timestamp": 1780018924,
+      "msm_name": "Traceroute",
+      "from": "87.89.147.161",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018969
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 2,
+      "endtime": 1780018935,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 319.878773,
+      "dst_addr": "151.101.107.1",
+      "src_addr": "192.168.29.112",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.29.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.362
+            },
+            {
+              "from": "192.168.29.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.029
+            },
+            {
+              "from": "192.168.29.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.897
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "10.242.112.1",
+              "ttl": 254,
+              "size": 68,
+              "rtt": 4.181
+            },
+            {
+              "from": "10.242.112.1",
+              "ttl": 254,
+              "size": 68,
+              "rtt": 6.375
+            },
+            {
+              "from": "10.242.112.1",
+              "ttl": 254,
+              "size": 68,
+              "rtt": 2.993
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "172.31.5.145",
+              "ttl": 253,
+              "size": 68,
+              "rtt": 5.463
+            },
+            {
+              "from": "172.31.5.145",
+              "ttl": 253,
+              "size": 68,
+              "rtt": 4.624
+            },
+            {
+              "from": "172.31.5.145",
+              "ttl": 253,
+              "size": 68,
+              "rtt": 4.414
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "192.168.128.138",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 4.491
+            },
+            {
+              "from": "192.168.128.138",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 4.394
+            },
+            {
+              "from": "192.168.128.138",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 4.489
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "172.27.248.54",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 4.111
+            },
+            {
+              "from": "172.27.248.54",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 4.259
+            },
+            {
+              "from": "172.27.248.54",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 4.211
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "172.27.248.35",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 5.276
+            },
+            {
+              "from": "172.27.248.35",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 3.994
+            },
+            {
+              "from": "172.27.248.35",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 5.149
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "from": "151.101.107.1",
+              "ttl": 250,
+              "size": 0,
+              "flags": "RA",
+              "rtt": 962.236
+            },
+            {
+              "from": "49.44.53.131",
+              "ttl": 247,
+              "size": 28,
+              "rtt": 5.87
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "from": "151.101.107.1",
+              "ttl": 56,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 4.066
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "151.101.107.1",
+              "ttl": 250,
+              "size": 0,
+              "flags": "RA",
+              "rtt": 979.455
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 62302,
+      "timestamp": 1780018925,
+      "msm_name": "Traceroute",
+      "from": "49.36.144.94",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018940
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 7,
+      "endtime": 1780019016,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 43.446138,
+      "dst_addr": "199.232.135.1",
+      "src_addr": "192.168.0.38",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.775
+            },
+            {
+              "from": "192.168.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.376
+            },
+            {
+              "from": "192.168.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.407
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "66.174.20.193",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 19.437
+            },
+            {
+              "from": "66.174.20.193",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 19.962
+            },
+            {
+              "from": "66.174.20.193",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 21.445
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "69.83.13.130",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 16.284
+            },
+            {
+              "from": "69.83.13.130",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 19.597
+            },
+            {
+              "from": "69.83.13.130",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 19.625
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "69.83.1.168",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 24.693
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "from": "69.83.2.157",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 24.434
+            },
+            {
+              "from": "69.83.2.157",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 19.802
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 10,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 11,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 12,
+          "result": [
+            {
+              "from": "199.232.135.1",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1388
+                }
+              ],
+              "rtt": 20.577
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 62342,
+      "timestamp": 1780018924,
+      "msm_name": "Traceroute",
+      "from": "97.200.77.37",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780019017
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 3,
+      "endtime": 1780018930,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 5023.384149,
+      "dst_addr": "151.101.159.1",
+      "src_addr": "192.168.1.2",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.18
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.307
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.974
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "223.178.56.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 10.827
+            },
+            {
+              "from": "223.178.56.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 9.75
+            },
+            {
+              "from": "223.178.56.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 9.879
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "122.187.95.101",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 9.67
+            },
+            {
+              "from": "122.187.95.101",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 9.725
+            },
+            {
+              "from": "122.187.95.101",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 9.781
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "116.119.73.196",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 14.71
+            },
+            {
+              "from": "116.119.73.196",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 17.865
+            },
+            {
+              "from": "116.119.73.196",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 17.645
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "167.82.128.128",
+              "ttl": 58,
+              "size": 88,
+              "rtt": 17.989
+            },
+            {
+              "from": "167.82.128.128",
+              "ttl": 58,
+              "size": 88,
+              "rtt": 17.743
+            },
+            {
+              "from": "167.82.128.128",
+              "ttl": 58,
+              "size": 88,
+              "rtt": 17.395
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "151.101.159.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1250
+                }
+              ],
+              "rtt": 17.597
+            },
+            {
+              "from": "151.101.159.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1250
+                }
+              ],
+              "rtt": 17.9
+            },
+            {
+              "from": "151.101.159.1",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1250
+                }
+              ],
+              "rtt": 17.361
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 62949,
+      "timestamp": 1780018930,
+      "msm_name": "Traceroute",
+      "from": "122.171.22.219",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018931
+    },
+    {
+      "fw": 5090,
+      "mver": "2.6.4",
+      "lts": 70,
+      "endtime": 1780018924,
+      "dst_name": "checkout.paypal.com",
+      "ttr": 4.448343,
+      "dst_addr": "151.101.3.1",
+      "src_addr": "145.220.0.55",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "145.220.0.1",
+              "ttl": 255,
+              "size": 28,
+              "rtt": 0.277
+            },
+            {
+              "from": "145.220.0.1",
+              "ttl": 255,
+              "size": 28,
+              "rtt": 0.206
+            },
+            {
+              "from": "145.220.0.1",
+              "ttl": 255,
+              "size": 28,
+              "rtt": 0.287
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "192.12.54.190",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 0.342
+            },
+            {
+              "from": "192.12.54.190",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 0.333
+            },
+            {
+              "from": "192.12.54.190",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 0.311
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "145.145.2.218",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 0.395
+            },
+            {
+              "from": "145.145.2.218",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 0.312
+            },
+            {
+              "from": "145.145.2.218",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 0.45
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "145.145.128.6",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 0.771
+            },
+            {
+              "from": "145.145.128.6",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 0.699
+            },
+            {
+              "from": "145.145.128.6",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 0.554
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "23.235.34.140",
+              "ttl": 62,
+              "size": 88,
+              "rtt": 0.558
+            },
+            {
+              "from": "23.235.34.140",
+              "ttl": 62,
+              "size": 88,
+              "rtt": 0.514
+            },
+            {
+              "from": "23.235.34.140",
+              "ttl": 62,
+              "size": 88,
+              "rtt": 0.533
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "151.101.3.1",
+              "ttl": 61,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 0.467
+            },
+            {
+              "from": "151.101.3.1",
+              "ttl": 61,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 0.489
+            },
+            {
+              "from": "151.101.3.1",
+              "ttl": 61,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1460
+                }
+              ],
+              "rtt": 0.508
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 175357176,
+      "prb_id": 7616,
+      "timestamp": 1780018924,
+      "msm_name": "Traceroute",
+      "from": "145.220.0.55",
+      "type": "traceroute",
+      "group_id": 175357175,
+      "stored_timestamp": 1780018930
+    }
+  ],
+  "rtt_by_country": [
+    {
+      "country": "IN",
+      "min_rtt_ms": 15.619508
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 8.268996
+    },
+    {
+      "country": "SG",
+      "min_rtt_ms": 5.689516
+    },
+    {
+      "country": "DE",
+      "min_rtt_ms": 10.493834
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 33.035583
+    },
+    {
+      "country": "US",
+      "min_rtt_ms": 23.255167
+    },
+    {
+      "country": "US",
+      "min_rtt_ms": 7.991559
+    },
+    {
+      "country": "FR",
+      "min_rtt_ms": 6.821694
+    },
+    {
+      "country": "US",
+      "min_rtt_ms": 16.886458
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 15.085503
+    },
+    {
+      "country": "NL",
+      "min_rtt_ms": 0.440099
+    }
+  ],
+  "probe_records": [
+    {
+      "pid": 1002932,
+      "cc": "IN",
+      "dst_ip": "151.101.131.1",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 15.619508,
+      "max_dist_km": 1561.9508,
+      "dist_probe_to_geoip": 12419.918055820877,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 1010593,
+      "cc": "IN",
+      "dst_ip": "151.101.159.1",
+      "dst_city": "Chennai",
+      "dst_country": "IN",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 8.268996,
+      "max_dist_km": 826.8996,
+      "dist_probe_to_geoip": 291.33630748240563,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 25051,
+      "cc": "SG",
+      "dst_ip": "199.232.47.1",
+      "dst_city": "Singapore",
+      "dst_country": "SG",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 5.689516,
+      "max_dist_km": 568.9516,
+      "dist_probe_to_geoip": 7.271760603280437,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 51191,
+      "cc": "DE",
+      "dst_ip": "146.75.119.1",
+      "dst_city": "Frankfurt am Main",
+      "dst_country": "DE",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 10.493834,
+      "max_dist_km": 1049.3834,
+      "dist_probe_to_geoip": 291.9399655120616,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 53448,
+      "cc": "IN",
+      "dst_ip": "151.101.211.1",
+      "dst_city": "Mumbai",
+      "dst_country": "IN",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 33.035583,
+      "max_dist_km": 3303.5583,
+      "dist_probe_to_geoip": 1253.1612199527922,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 54877,
+      "cc": "US",
+      "dst_ip": "151.101.3.1",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 23.255167,
+      "max_dist_km": 2325.5167,
+      "dist_probe_to_geoip": 3570.244109886631,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 60308,
+      "cc": "US",
+      "dst_ip": "151.101.47.1",
+      "dst_city": "New York City",
+      "dst_country": "US",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 7.991559,
+      "max_dist_km": 799.1559,
+      "dist_probe_to_geoip": 324.0222920024551,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 62287,
+      "cc": "FR",
+      "dst_ip": "199.232.83.1",
+      "dst_city": "Marseille",
+      "dst_country": "FR",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 6.821694,
+      "max_dist_km": 682.1694,
+      "dist_probe_to_geoip": 278.0193056901215,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 62302,
+      "cc": "IN",
+      "dst_ip": "checkout.paypal.com",
+      "min_rtt": null,
+      "verdict": "NO_DATA"
+    },
+    {
+      "pid": 62342,
+      "cc": "US",
+      "dst_ip": "199.232.135.1",
+      "dst_city": "Boston",
+      "dst_country": "US",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 16.886458,
+      "max_dist_km": 1688.6458,
+      "dist_probe_to_geoip": 4.730798957904675,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 62949,
+      "cc": "IN",
+      "dst_ip": "151.101.159.1",
+      "dst_city": "Chennai",
+      "dst_country": "IN",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 15.085503,
+      "max_dist_km": 1508.5502999999999,
+      "dist_probe_to_geoip": 406.818494127913,
+      "verdict": "CONSISTENT"
+    },
+    {
+      "pid": 7616,
+      "cc": "NL",
+      "dst_ip": "151.101.67.1",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS54113 Fastly, Inc.",
+      "min_rtt": 0.440099,
+      "max_dist_km": 44.0099,
+      "dist_probe_to_geoip": 8776.245946286821,
+      "verdict": "CONTRADICTED"
+    }
+  ],
+  "all_paths": [
+    {
+      "pid": 1002932,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [
+        {
+          "hop": 4,
+          "addr": "192.168.182.33",
+          "rtt": 28.051,
+          "rdns": null
+        }
+      ],
+      "foreign_no_cliff": [
+        {
+          "hop": 8,
+          "addr": "167.82.128.102",
+          "rtt": 15.444,
+          "rdns": null
+        },
+        {
+          "hop": 9,
+          "addr": "151.101.131.1",
+          "rtt": 14.496,
+          "rdns": null
+        }
+      ],
+      "cliff_hops": [
+        4
+      ]
+    },
+    {
+      "pid": 1010593,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [
+        {
+          "hop": 9,
+          "addr": "167.82.128.128",
+          "rtt": 9.341,
+          "rdns": null
+        }
+      ],
+      "cliff_hops": []
+    },
+    {
+      "pid": 25051,
+      "cc": "SG",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 51191,
+      "cc": "DE",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 53448,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 54877,
+      "cc": "US",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 60308,
+      "cc": "US",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 62287,
+      "cc": "FR",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 62302,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 62342,
+      "cc": "US",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 62949,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [
+        {
+          "hop": 5,
+          "addr": "167.82.128.128",
+          "rtt": 17.395,
+          "rdns": null
+        }
+      ],
+      "cliff_hops": []
+    },
+    {
+      "pid": 7616,
+      "cc": "NL",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    }
+  ],
+  "whois_cache": {
+    "151.101.131.1": {},
+    "167.82.128.102": {},
+    "167.82.128.128": {},
+    "192.168.182.33": {}
+  }
+}

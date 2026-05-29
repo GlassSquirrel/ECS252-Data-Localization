@@ -1,0 +1,584 @@
+======================================================================
+  RIPE Atlas Analysis Report
+  Provider  : Paytm
+  Endpoint  : Payment Gateway: securegw.paytm.in
+  Ping MSM  : 175255667
+  Trace MSM : 175255668
+  Run at    : 2026-05-27 22:08 UTC
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+  PING ANALYSIS
+──────────────────────────────────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════════════
+PING RESULTS — RTT-to-Distance + GeoIP Cross-Validation
+══════════════════════════════════════════════════════════════════════
+
+  Logic: probe draws a circle of radius = RTT × 200/2 km.
+         If GeoIP-claimed server location falls OUTSIDE this
+         circle, the GeoIP label is physically impossible —
+         the server must be closer (Anycast PoP effect).
+
+  ──────────────────────────────────────────────────────────────
+  Probe 1010593 (IN) | src=49.205.217.86 → dst=104.114.87.250
+    Min RTT        = 1.490 ms
+    Max distance   = 149.0 km  (d ≤ 1.490 ms × 200 / 2)
+    Probe coords   = (12.9785, 77.5915)
+    GeoIP claims   = Bengaluru, IN (12.9719, 77.5937) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 0.8 km
+    RTT circle r   = 149.0 km
+    ✅ CONSISTENT  — 0.8 km ≤ 149.0 km
+       GeoIP-claimed location (Bengaluru, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 10694 (US) | src=71.246.219.4 → dst=23.0.249.160
+    Min RTT        = 3.777 ms
+    Max distance   = 377.7 km  (d ≤ 3.777 ms × 200 / 2)
+    Probe coords   = (38.9695, -77.3885)
+    GeoIP claims   = Sterling, US (39.0062, -77.4286) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 5.4 km
+    RTT circle r   = 377.7 km
+    ✅ CONSISTENT  — 5.4 km ≤ 377.7 km
+       GeoIP-claimed location (Sterling, US) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 25051 (SG) | src=116.14.228.11 → dst=104.69.153.220
+    Min RTT        = 2.915 ms
+    Max distance   = 291.5 km  (d ≤ 2.915 ms × 200 / 2)
+    Probe coords   = (1.3475, 103.8195)
+    GeoIP claims   = Singapore, SG (1.2897, 103.8501) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 7.3 km
+    RTT circle r   = 291.5 km
+    ✅ CONSISTENT  — 7.3 km ≤ 291.5 km
+       GeoIP-claimed location (Singapore, SG) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 3288 (DE) | src=217.88.95.123 → dst=23.67.139.179
+    Min RTT        = 13.140 ms
+    Max distance   = 1,314.0 km  (d ≤ 13.140 ms × 200 / 2)
+    Probe coords   = (47.7215, 10.3115)
+    GeoIP claims   = Frankfurt am Main, DE (50.1155, 8.6842) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 291.5 km
+    RTT circle r   = 1,314.0 km
+    ✅ CONSISTENT  — 291.5 km ≤ 1,314.0 km
+       GeoIP-claimed location (Frankfurt am Main, DE) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 385 (IN) | src=182.71.53.98 → dst=104.69.153.220
+    Min RTT        = 87.560 ms
+    Max distance   = 8,756.0 km  (d ≤ 87.560 ms × 200 / 2)
+    Probe coords   = (28.4995, 77.0915)
+    GeoIP claims   = Singapore, SG (1.2897, 103.8501) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 4,149.9 km
+    RTT circle r   = 8,756.0 km
+    ✅ CONSISTENT  — 4,149.9 km ≤ 8,756.0 km
+       GeoIP-claimed location (Singapore, SG) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 53613 (IN) | src=122.173.31.45 → dst=23.57.249.81
+    Min RTT        = 16.254 ms
+    Max distance   = 1,625.4 km  (d ≤ 16.254 ms × 200 / 2)
+    Probe coords   = (31.8785, 77.1475)
+    GeoIP claims   = New Delhi, IN (28.6214, 77.2148) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 362.2 km
+    RTT circle r   = 1,625.4 km
+    ✅ CONSISTENT  — 362.2 km ≤ 1,625.4 km
+       GeoIP-claimed location (New Delhi, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 53879 (FR) | src=176.129.47.43 → dst=2.18.133.120
+    Min RTT        = 8.661 ms
+    Max distance   = 866.1 km  (d ≤ 8.661 ms × 200 / 2)
+    Probe coords   = (48.6415, 7.7105)
+    GeoIP claims   = Aubervilliers, FR (48.9167, 2.3833) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 391.5 km
+    RTT circle r   = 866.1 km
+    ✅ CONSISTENT  — 391.5 km ≤ 866.1 km
+       GeoIP-claimed location (Aubervilliers, FR) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 60276 (IN) | src=117.242.120.159 → dst=104.108.229.140
+    Min RTT        = 33.340 ms
+    Max distance   = 3,334.0 km  (d ≤ 33.340 ms × 200 / 2)
+    Probe coords   = (34.0805, 74.8005)
+    GeoIP claims   = New Delhi, IN (28.6214, 77.2148) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 648.8 km
+    RTT circle r   = 3,334.0 km
+    ✅ CONSISTENT  — 648.8 km ≤ 3,334.0 km
+       GeoIP-claimed location (New Delhi, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 60327 (IN) | src=223.237.9.31 → dst=104.120.74.32
+    Min RTT        = 39.829 ms
+    Max distance   = 3,982.9 km  (d ≤ 39.829 ms × 200 / 2)
+    Probe coords   = (28.6005, 77.3185)
+    GeoIP claims   = Mumbai, IN (19.0728, 72.8826) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 1,151.2 km
+    RTT circle r   = 3,982.9 km
+    ✅ CONSISTENT  — 1,151.2 km ≤ 3,982.9 km
+       GeoIP-claimed location (Mumbai, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 62342 (US) | src=97.200.77.37 → dst=23.54.185.161
+    Min RTT        = 27.624 ms
+    Max distance   = 2,762.4 km  (d ≤ 27.624 ms × 200 / 2)
+    Probe coords   = (42.3885, -71.1005)
+    GeoIP claims   = New York City, US (40.7143, -74.0060) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 305.1 km
+    RTT circle r   = 2,762.4 km
+    ✅ CONSISTENT  — 305.1 km ≤ 2,762.4 km
+       GeoIP-claimed location (New York City, US) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 64350 (US) | src=73.195.128.22 → dst=23.204.3.165
+    Min RTT        = 16.979 ms
+    Max distance   = 1,697.9 km  (d ≤ 16.979 ms × 200 / 2)
+    Probe coords   = (39.9275, -74.8905)
+    GeoIP claims   = Secaucus, US (40.7895, -74.0565) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 119.1 km
+    RTT circle r   = 1,697.9 km
+    ✅ CONSISTENT  — 119.1 km ≤ 1,697.9 km
+       GeoIP-claimed location (Secaucus, US) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 64718 (IN) | src=49.37.113.89 → dst=23.58.55.125
+    Min RTT        = 12.787 ms
+    Max distance   = 1,278.7 km  (d ≤ 12.787 ms × 200 / 2)
+    Probe coords   = (20.3615, 85.8275)
+    GeoIP claims   = Kolkata, IN (22.5626, 88.3630) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 358.8 km
+    RTT circle r   = 1,278.7 km
+    ✅ CONSISTENT  — 358.8 km ≤ 1,278.7 km
+       GeoIP-claimed location (Kolkata, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 7616 (NL) | src=145.220.0.55 → dst=23.207.99.190
+    Min RTT        = 0.674 ms
+    Max distance   = 67.4 km  (d ≤ 0.674 ms × 200 / 2)
+    Probe coords   = (52.3605, 4.9475)
+    GeoIP claims   = Nieuw-Vennep, NL (52.2869, 4.5958) | AS16625 Akamai Technologies, Inc.
+    Probe → GeoIP  = 25.3 km
+    RTT circle r   = 67.4 km
+    ✅ CONSISTENT  — 25.3 km ≤ 67.4 km
+       GeoIP-claimed location (Nieuw-Vennep, NL) is physically plausible given the RTT.
+
+──────────────────────────────────────────────────────────────────────
+ANYCAST DETECTION — MULTI-REGION ANALYSIS
+──────────────────────────────────────────────────────────────────────
+
+  [Signal A] Destination IP diversity across regions:
+      DE → 23.67.139.179
+      FR → 2.18.133.120
+      IN → 104.108.229.140, 104.114.87.250, 104.120.74.32, 104.69.153.220, 23.57.249.81, 23.58.55.125
+      NL → 23.207.99.190
+      SG → 104.69.153.220
+      US → 23.0.249.160, 23.204.3.165, 23.54.185.161
+  → 12 distinct IPs observed across regions.
+    Different IPs per region = strong GeoDNS / Anycast evidence.
+
+  [Signal B] GeoIP cross-validation pattern:
+    CONSISTENT    regions : ['DE', 'FR', 'IN', 'NL', 'SG', 'US']
+    CONTRADICTED  regions : none
+  → All regions CONSISTENT: GeoIP accurate, each region
+    resolves to a local node (GeoDNS-based Anycast like Akamai).
+
+  [Signal C] RTT vs. expected travel time to GeoIP location:
+    (Expected RTT = 2 × distance_to_GeoIP / 200 km/ms)
+    Probe  1010593 (IN) | actual=1.49ms  expected=0.0ms  → ANOMALY (ratio=193.2x)
+    Probe    10694 (US) | actual=3.78ms  expected=0.1ms  → ANOMALY (ratio=70.6x)
+    Probe    25051 (SG) | actual=2.92ms  expected=0.1ms  → ANOMALY (ratio=40.1x)
+    Probe     3288 (DE) | actual=13.14ms  expected=2.9ms  → ANOMALY (ratio=4.5x)
+    Probe      385 (IN) | actual=87.56ms  expected=41.5ms  → ANOMALY (ratio=2.1x)
+    Probe    53613 (IN) | actual=16.25ms  expected=3.6ms  → ANOMALY (ratio=4.5x)
+    Probe    53879 (FR) | actual=8.66ms  expected=3.9ms  → ANOMALY (ratio=2.2x)
+    Probe    60276 (IN) | actual=33.34ms  expected=6.5ms  → ANOMALY (ratio=5.1x)
+    Probe    60327 (IN) | actual=39.83ms  expected=11.5ms  → ANOMALY (ratio=3.5x)
+    Probe    62342 (US) | actual=27.62ms  expected=3.1ms  → ANOMALY (ratio=9.1x)
+    Probe    64350 (US) | actual=16.98ms  expected=1.2ms  → ANOMALY (ratio=14.3x)
+    Probe    64718 (IN) | actual=12.79ms  expected=3.6ms  → ANOMALY (ratio=3.6x)
+    Probe     7616 (NL) | actual=0.67ms  expected=0.3ms  → ANOMALY (ratio=2.7x)
+  → Majority of probes show RTT ≈ expected: server is near its GeoIP-claimed location.
+
+──────────────────────────────────────────────────────────────────────
+  FINAL ANYCAST VERDICT
+──────────────────────────────────────────────────────────────────────
+  Signal A (IP diversity)         : ANYCAST
+  Signal B (GeoIP pattern)        : ANYCAST_ACCURATE_GEOIP
+  Signal C (RTT vs expected)      : MATCHES_GEOIP
+
+  → ✅ Anycast/GeoDNS CONFIRMED (Akamai-style)
+   Each region resolves to a dedicated local PoP.
+   GeoIP labels are accurate. Indian users are served
+   from India-based infrastructure.
+
+──────────────────────────────────────────────────────────────────────
+  RTT SUMMARY BY REGION
+──────────────────────────────────────────────────────────────────────
+      IN  min=1.490 ms  max=87.560 ms  n=6
+      SG  min=2.915 ms  max=2.915 ms  n=1
+      DE  min=13.140 ms  max=13.140 ms  n=1
+      US  min=3.777 ms  max=27.624 ms  n=3
+
+
+──────────────────────────────────────────────────────────────────────
+  ANNOTATED PATHS
+──────────────────────────────────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════════════
+ANNOTATED TRACEROUTE PATHS
+══════════════════════════════════════════════════════════════════════
+
+  ──────────────────────────────────────────────────────────────
+  Probe 1010593 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 172.28.0.1                                        0.1 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 10.100.10.1                                       0.2 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: *                                                (no response)
+    hop   4: *                                                (no response)
+    hop   5: *                                                (no response)
+    hop   6: 121.242.109.165                                   1.6 ms
+           IPinfo : IN / Bengaluru / AS4755 TATA Communications formerly VSNL is Leading ISP
+    hop   7: 172.28.196.138                                    1.5 ms
+           IPinfo : (IPinfo unavailable)
+    hop   8: 59.160.132.82                                     1.9 ms
+           IPinfo : IN / Bengaluru / AS4755 TATA Communications formerly VSNL is Leading ISP
+    hop   9: 104.114.87.250                                    1.9 ms
+           IPinfo : IN / Bengaluru / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 1010593 (IN).
+
+    Summary for probe 1010593 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 10694 (US)  |  cliffs: 1  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.8.1                                       0.4 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 71.246.219.1                                      1.0 ms
+           IPinfo : US / Herndon / AS701 Verizon Business
+    hop   3: 100.41.21.124                                     1.7 ms
+           IPinfo : US / Herndon / AS701 Verizon Business
+    hop   4: *                                                (no response)
+    hop   5: 204.148.170.154                                  46.1 ms  ⚡ RTT +44 ms (across 1 silent hops)
+           IPinfo : US / Washington / AS701 Verizon Business
+    hop   6: *                                                (no response)
+    hop   7: *                                                (no response)
+    hop   8: *                                                (no response)
+    hop   9: 23.0.249.160                                      2.7 ms
+           IPinfo : US / Sterling / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 10694 (US).
+
+    Summary for probe 10694 (US):
+      RTT cliffs detected        : 1  at hops [5]
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 25051 (SG)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.1.254                                     0.5 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 116.14.229.254                                    1.4 ms
+           IPinfo : SG / Singapore / AS9506 Singtel Fibre Broadband
+    hop   3: 165.21.193.22                                     2.3 ms
+           IPinfo : SG / Singapore / AS3758 SingNet
+    hop   4: 165.21.193.21                                     2.0 ms
+           IPinfo : SG / Singapore / AS3758 SingNet
+    hop   5: *                                                (no response)
+    hop   6: *                                                (no response)
+    hop   7: *                                                (no response)
+    hop   8: *                                                (no response)
+    hop   9: *                                                (no response)
+    hop 255: *                                                (no response)
+
+    No egress evidence detected for probe 25051 (SG).
+
+    Summary for probe 25051 (SG):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 3288 (DE)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.178.1                                     3.3 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 62.155.242.186                                    6.9 ms
+           IPinfo : DE / Kempten (Allgäu) / AS3320 Deutsche Telekom AG
+    hop   3: 62.153.181.126                                   11.4 ms
+           IPinfo : DE / Munich / AS3320 Deutsche Telekom AG
+    hop   4: 62.157.250.63                                     8.9 ms
+           IPinfo : DE / Munich / AS3320 Deutsche Telekom AG
+    hop   5: 192.168.224.3                                     8.1 ms
+           IPinfo : (IPinfo unavailable)
+    hop   6: 192.168.225.131                                   9.1 ms
+           IPinfo : (IPinfo unavailable)
+    hop   7: 23.218.166.35                                     9.0 ms
+           IPinfo : DE / Munich / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 3288 (DE).
+
+    Summary for probe 3288 (DE):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 385 (IN)  |  cliffs: 1  |  confirmed egress: 0  |  inconclusive: 1  |  foreign no-cliff: 4
+    hop   1: 192.168.142.1                                     1.6 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 182.71.53.97                                      1.9 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   3: 182.74.14.241                                     4.9 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   4: 116.119.81.143                                   81.8 ms  ⚡ RTT +77 ms  ⚠️  RTT spike, IPinfo domestic
+           IPinfo : IN / Mumbai / AS9498 BHARTI Airtel Ltd.
+           WHOIS  : ASN 9498 (BBIL-AP - BHARTI Airtel Ltd., IN) | net=BHARTITELESONIC | cc=IN
+           rDNS   : (no PTR record)
+    hop   5: *                                                (no response)
+          ⚠️  Egress boundary obscured by preceding silent hops
+    hop   6: 23.54.79.25                                      82.4 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : SG / Singapore / AS20940 Akamai International B.V.
+           WHOIS  : ASN 20940 (AKAMAI-ASN1 - Akamai International B.V., NL) | net=AKAMAI | cc=None
+           rDNS   : lo1.r04.stem01.sin01.fab.netarch.akamai.com
+    hop   7: 23.54.79.18                                      88.8 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : SG / Singapore / AS20940 Akamai International B.V.
+           WHOIS  : ASN 20940 (AKAMAI-ASN1 - Akamai International B.V., NL) | net=AKAMAI | cc=None
+           rDNS   : lo1.r01.spine04.sin01.fab.netarch.akamai.com
+    hop   8: 23.54.79.5                                       87.1 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : SG / Singapore / AS20940 Akamai International B.V.
+           WHOIS  : ASN 20940 (AKAMAI-ASN1 - Akamai International B.V., NL) | net=AKAMAI | cc=None
+           rDNS   : lo1.r04.leaf01.sin01.fab.netarch.akamai.com
+    hop   9: *                                                (no response)
+          ⚠️  Egress boundary obscured by preceding silent hops
+    hop  10: 104.69.153.220                                   87.6 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : SG / Singapore / AS16625 Akamai Technologies, Inc.
+           WHOIS  : ASN 16625 (AKAMAI-AS - Akamai Technologies, Inc., US) | net=AKAMAI | cc=None
+           rDNS   : a104-69-153-220.deploy.static.akamaitechnologies.com
+
+    Inconclusive hops (RTT spike, IPinfo still domestic):
+      hop   4: 116.119.81.143                                RTT=81.8 ms  ASN=BBIL-AP - BHARTI Airtel Ltd., IN  rDNS=no PTR record
+
+    Foreign ASN without RTT spike:
+      hop   6: 23.54.79.25                                   RTT=82.4 ms  ASN=AKAMAI-ASN1 - Akamai International B.V., NL  rDNS=lo1.r04.stem01.sin01.fab.netarch.akamai.com
+      hop   7: 23.54.79.18                                   RTT=88.8 ms  ASN=AKAMAI-ASN1 - Akamai International B.V., NL  rDNS=lo1.r01.spine04.sin01.fab.netarch.akamai.com
+      hop   8: 23.54.79.5                                    RTT=87.1 ms  ASN=AKAMAI-ASN1 - Akamai International B.V., NL  rDNS=lo1.r04.leaf01.sin01.fab.netarch.akamai.com
+      hop  10: 104.69.153.220                                RTT=87.6 ms  ASN=AKAMAI-AS - Akamai Technologies, Inc., US  rDNS=a104-69-153-220.deploy.static.akamaitechnologies.com
+
+    Summary for probe 385 (IN):
+      RTT cliffs detected        : 1  at hops [4]
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 1  at hops [4]
+      Foreign no-cliff           : 4  at hops [6, 7, 8, 10]
+      ⚠️  Some egress boundaries may be obscured by silent (*) hops
+
+  ──────────────────────────────────────────────────────────────
+  Probe 53613 (IN)  |  cliffs: 1  |  confirmed egress: 0  |  inconclusive: 1  |  foreign no-cliff: 0
+    hop   1: 192.168.10.1                                      0.8 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 192.168.1.1                                       1.1 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: 122.176.125.101                                  10.1 ms
+           IPinfo : IN / Noida / AS24560 Bharti Airtel Ltd., Telemedia Services
+    hop   4: 122.186.97.249                                    9.9 ms
+           IPinfo : IN / Shimla / AS9498 BHARTI Airtel Ltd.
+    hop   5: 116.119.36.180                                   39.9 ms  ⚡ RTT +30 ms  ⚠️  RTT spike, IPinfo domestic
+           IPinfo : IN / Mumbai / AS9498 BHARTI Airtel Ltd.
+           WHOIS  : ASN 9498 (BBIL-AP - BHARTI Airtel Ltd., IN) | net=BHARTITELESONIC | cc=IN
+           rDNS   : (no PTR record)
+    hop   6: *                                                (no response)
+    hop   7: 104.120.74.32                                    39.5 ms
+           IPinfo : IN / Mumbai / AS16625 Akamai Technologies, Inc.
+
+    Inconclusive hops (RTT spike, IPinfo still domestic):
+      hop   5: 116.119.36.180                                RTT=39.9 ms  ASN=BBIL-AP - BHARTI Airtel Ltd., IN  rDNS=no PTR record
+
+    Summary for probe 53613 (IN):
+      RTT cliffs detected        : 1  at hops [5]
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 1  at hops [5]
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 53879 (FR)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.1.1                                       0.7 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: *                                                (no response)
+    hop   3: *                                                (no response)
+    hop   4: 62.34.2.135                                       9.3 ms
+           IPinfo : FR / Strasbourg / AS5410 Bouygues Telecom SA
+    hop   5: 62.34.3.196                                       9.4 ms
+           IPinfo : FR / Paris / AS5410 Bouygues Telecom SA
+    hop   6: *                                                (no response)
+    hop   7: *                                                (no response)
+    hop   8: *                                                (no response)
+    hop   9: *                                                (no response)
+    hop  10: 2.18.133.120                                      8.8 ms
+           IPinfo : FR / Aubervilliers / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 53879 (FR).
+
+    Summary for probe 53879 (FR):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 60276 (IN)  |  cliffs: 1  |  confirmed egress: 0  |  inconclusive: 1  |  foreign no-cliff: 0
+    hop   1: 192.168.1.1                                       7.2 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 117.247.232.97                                    3.7 ms
+           IPinfo : IN / Srinagar / AS9829 National Internet Backbone
+    hop   3: 10.219.19.114                                     8.5 ms
+           IPinfo : (IPinfo unavailable)
+    hop   4: 10.200.70.146                                    31.0 ms  ⚡ RTT +22 ms  ⚠️  RTT spike, IPinfo domestic
+           IPinfo : (IPinfo unavailable)
+           WHOIS  : ASN N/A (N/A) | net=N/A | cc=??
+           rDNS   : (no PTR record)
+    hop   5: *                                                (no response)
+    hop   6: *                                                (no response)
+    hop   7: *                                                (no response)
+    hop   8: *                                                (no response)
+    hop   9: *                                                (no response)
+    hop 255: 104.108.229.140                                  26.2 ms
+           IPinfo : IN / New Delhi / AS16625 Akamai Technologies, Inc.
+
+    Inconclusive hops (RTT spike, IPinfo still domestic):
+      hop   4: 10.200.70.146                                 RTT=31.0 ms  ASN=N/A  rDNS=no PTR record
+
+    Summary for probe 60276 (IN):
+      RTT cliffs detected        : 1  at hops [4]
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 1  at hops [4]
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 60327 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+
+    No egress evidence detected for probe 60327 (IN).
+
+    Summary for probe 60327 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 62342 (US)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.0.1                                       2.3 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 66.174.20.193                                    19.5 ms
+           IPinfo : US / Boston / AS22394 Verizon Business
+    hop   3: *                                                (no response)
+    hop   4: *                                                (no response)
+    hop   5: 69.83.13.130                                     19.7 ms
+           IPinfo : US / Boston / AS22394 Verizon Business
+    hop   6: *                                                (no response)
+    hop   7: *                                                (no response)
+    hop   8: 69.83.1.168                                      39.5 ms
+           IPinfo : US / Boston / AS22394 Verizon Business
+    hop   9: 69.83.2.157                                      29.9 ms
+           IPinfo : US / Boston / AS22394 Verizon Business
+    hop  10: *                                                (no response)
+    hop  11: 204.148.18.58                                    24.4 ms
+           IPinfo : US / Edison / AS701 Verizon Business
+    hop  12: *                                                (no response)
+    hop  13: *                                                (no response)
+    hop  14: *                                                (no response)
+    hop  15: *                                                (no response)
+    hop  16: 23.54.185.161                                    34.2 ms
+           IPinfo : US / New York City / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 62342 (US).
+
+    Summary for probe 62342 (US):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 64350 (US)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 10.0.0.1                                          3.9 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 10.27.6.226                                      11.9 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: 68.85.119.129                                    11.8 ms
+           IPinfo : US / Audubon / AS7922 Comcast Cable Communications, LLC
+    hop   4: 96.216.138.70                                    11.9 ms
+           IPinfo : US / Audubon / AS7922 Comcast Cable Communications, LLC
+    hop   5: 96.216.138.61                                    12.5 ms
+           IPinfo : US / Audubon / AS7922 Comcast Cable Communications, LLC
+    hop   6: 68.85.63.61                                      15.7 ms
+           IPinfo : US / Absecon / AS7922 Comcast Cable Communications, LLC
+    hop   7: 96.108.49.105                                    22.4 ms
+           IPinfo : US / New York City / AS7922 Comcast Cable Communications, LLC
+    hop   8: 96.110.42.41                                     21.0 ms
+           IPinfo : US / New York City / AS7922 Comcast Cable Communications, LLC
+    hop   9: 96.110.34.10                                     21.1 ms
+           IPinfo : US / New York City / AS7922 Comcast Cable Communications, LLC
+    hop  10: *                                                (no response)
+    hop  11: *                                                (no response)
+    hop  12: *                                                (no response)
+    hop  13: *                                                (no response)
+    hop  14: *                                                (no response)
+    hop 255: 23.204.3.165                                     21.7 ms
+           IPinfo : US / Secaucus / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 64350 (US).
+
+    Summary for probe 64350 (US):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 64718 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.29.1                                      0.8 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 10.36.0.1                                         3.6 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: 172.26.86.195                                     3.6 ms
+           IPinfo : (IPinfo unavailable)
+    hop   4: 192.168.162.158                                   3.5 ms
+           IPinfo : (IPinfo unavailable)
+    hop   5: 172.17.186.133                                    2.8 ms
+           IPinfo : (IPinfo unavailable)
+    hop   6: 172.17.186.98                                     3.5 ms
+           IPinfo : (IPinfo unavailable)
+    hop   7: 192.168.31.114                                    3.4 ms
+           IPinfo : (IPinfo unavailable)
+    hop   8: *                                                (no response)
+    hop   9: *                                                (no response)
+    hop  10: *                                                (no response)
+    hop  11: *                                                (no response)
+    hop  12: 23.58.55.125                                     12.6 ms
+           IPinfo : IN / Kolkata / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 64718 (IN).
+
+    Summary for probe 64718 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 7616 (NL)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 145.220.0.1                                       0.2 ms
+           IPinfo : NL / Amsterdam / AS1101 IP-EEND BV
+    hop   2: 192.12.54.190                                     0.3 ms
+           IPinfo : NL / Amsterdam / AS1101 IP-EEND BV
+    hop   3: *                                                (no response)
+    hop   4: 192.168.224.133                                   0.7 ms
+           IPinfo : (IPinfo unavailable)
+    hop   5: 192.168.226.141                                   0.8 ms
+           IPinfo : (IPinfo unavailable)
+    hop   6: 23.207.99.190                                     0.7 ms
+           IPinfo : NL / Nieuw-Vennep / AS16625 Akamai Technologies, Inc.
+
+    No egress evidence detected for probe 7616 (NL).
+
+    Summary for probe 7616 (NL):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+

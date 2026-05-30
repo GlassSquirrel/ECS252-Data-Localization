@@ -1,0 +1,187 @@
+======================================================================
+  RIPE Atlas Analysis Report
+  Provider  : Googlelh3
+  Endpoint  : CND: lh3.googleusercontent.com
+  Ping MSM  : 174954161
+  Trace MSM : 174954162
+  Run at    : 2026-05-27 03:58 UTC
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+  PING ANALYSIS
+──────────────────────────────────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════════════
+PING RESULTS — RTT-to-Distance + GeoIP Cross-Validation
+══════════════════════════════════════════════════════════════════════
+
+  Logic: probe draws a circle of radius = RTT × 200/2 km.
+         If GeoIP-claimed server location falls OUTSIDE this
+         circle, the GeoIP label is physically impossible —
+         the server must be closer (Anycast PoP effect).
+
+  ──────────────────────────────────────────────────────────────
+  Probe 1002359 (IN) | src=152.70.64.30 → dst=142.250.67.33
+    Min RTT        = 78.695 ms
+    Max distance   = 7,869.5 km  (d ≤ 78.695 ms × 200 / 2)
+    Probe coords   = (17.3915, 78.4895)
+    GeoIP claims   = Chennai, IN (13.0878, 80.2785) | AS15169 Google LLC
+    Probe → GeoIP  = 515.6 km
+    RTT circle r   = 7,869.5 km
+    ✅ CONSISTENT  — 515.6 km ≤ 7,869.5 km
+       GeoIP-claimed location (Chennai, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 1002639 (SG) | src=132.147.106.33 → dst=74.125.24.132
+    Min RTT        = 2.216 ms
+    Max distance   = 221.6 km  (d ≤ 2.216 ms × 200 / 2)
+    Probe coords   = (1.3515, 103.8185)
+    GeoIP claims   = Singapore, SG (1.2897, 103.8501) | AS15169 Google LLC
+    Probe → GeoIP  = 7.7 km
+    RTT circle r   = 221.6 km
+    ✅ CONSISTENT  — 7.7 km ≤ 221.6 km
+       GeoIP-claimed location (Singapore, SG) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 1009077 (SG) | src=202.133.219.83 → dst=172.217.194.132
+    Min RTT        = 2.873 ms
+    Max distance   = 287.3 km  (d ≤ 2.873 ms × 200 / 2)
+    Probe coords   = (1.3205, 103.7705)
+    GeoIP claims   = Singapore, SG (1.2897, 103.8501) | AS15169 Google LLC
+    Probe → GeoIP  = 9.5 km
+    RTT circle r   = 287.3 km
+    ✅ CONSISTENT  — 9.5 km ≤ 287.3 km
+       GeoIP-claimed location (Singapore, SG) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 1010710 (IN) | src=182.77.66.31 → dst=142.250.192.193
+    Min RTT        = 5.154 ms
+    Max distance   = 515.4 km  (d ≤ 5.154 ms × 200 / 2)
+    Probe coords   = (28.6475, 77.2375)
+    GeoIP claims   = Delhi, IN (28.6519, 77.2315) | AS15169 Google LLC
+    Probe → GeoIP  = 0.8 km
+    RTT circle r   = 515.4 km
+    ✅ CONSISTENT  — 0.8 km ≤ 515.4 km
+       GeoIP-claimed location (Delhi, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 1011068 (IN) | src=103.100.201.89 → dst=142.250.66.1
+    Min RTT        = 12.852 ms
+    Max distance   = 1,285.2 km  (d ≤ 12.852 ms × 200 / 2)
+    Probe coords   = (17.7315, 83.3105)
+    GeoIP claims   = Chennai, IN (13.0878, 80.2785) | AS15169 Google LLC
+    Probe → GeoIP  = 610.1 km
+    RTT circle r   = 1,285.2 km
+    ✅ CONSISTENT  — 610.1 km ≤ 1,285.2 km
+       GeoIP-claimed location (Chennai, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 1013717 (DE) | src=79.225.127.131 → dst=142.251.127.132
+    Min RTT        = 19.879 ms
+    Max distance   = 1,987.9 km  (d ≤ 19.879 ms × 200 / 2)
+    Probe coords   = (54.7205, 9.6675)
+    GeoIP claims   = Frankfurt am Main, DE (50.1155, 8.6842) | AS15169 Google LLC
+    Probe → GeoIP  = 516.4 km
+    RTT circle r   = 1,987.9 km
+    ✅ CONSISTENT  — 516.4 km ≤ 1,987.9 km
+       GeoIP-claimed location (Frankfurt am Main, DE) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 1014529 (IN) | src=49.43.231.161 → dst=142.251.221.161
+    Min RTT        = 15.014 ms
+    Max distance   = 1,501.4 km  (d ≤ 15.014 ms × 200 / 2)
+    Probe coords   = (17.4815, 78.3685)
+    GeoIP claims   = Chennai, IN (13.0878, 80.2785) | AS15169 Google LLC
+    Probe → GeoIP  = 529.7 km
+    RTT circle r   = 1,501.4 km
+    ✅ CONSISTENT  — 529.7 km ≤ 1,501.4 km
+       GeoIP-claimed location (Chennai, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 1014958 (US) | src=192.227.173.81 → dst=142.250.177.65
+    Min RTT        = 13.552 ms
+    Max distance   = 1,355.2 km  (d ≤ 13.552 ms × 200 / 2)
+    Probe coords   = (42.8915, -78.8805)
+    GeoIP claims   = Chicago, US (41.8500, -87.6500) | AS15169 Google LLC
+    Probe → GeoIP  = 729.3 km
+    RTT circle r   = 1,355.2 km
+    ✅ CONSISTENT  — 729.3 km ≤ 1,355.2 km
+       GeoIP-claimed location (Chicago, US) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 25250 (IN) | src=103.127.226.33 → dst=142.250.193.65
+    Min RTT        = 1.900 ms
+    Max distance   = 190.0 km  (d ≤ 1.900 ms × 200 / 2)
+    Probe coords   = (28.6775, 77.3495)
+    GeoIP claims   = Delhi, IN (28.6519, 77.2315) | AS15169 Google LLC
+    Probe → GeoIP  = 11.9 km
+    RTT circle r   = 190.0 km
+    ✅ CONSISTENT  — 11.9 km ≤ 190.0 km
+       GeoIP-claimed location (Delhi, IN) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 30764 (DE) | src=87.78.21.206 → dst=142.251.14.132
+    Min RTT        = 8.366 ms
+    Max distance   = 836.6 km  (d ≤ 8.366 ms × 200 / 2)
+    Probe coords   = (50.8895, 6.8405)
+    GeoIP claims   = Frankfurt am Main, DE (50.1155, 8.6842) | AS15169 Google LLC
+    Probe → GeoIP  = 156.2 km
+    RTT circle r   = 836.6 km
+    ✅ CONSISTENT  — 156.2 km ≤ 836.6 km
+       GeoIP-claimed location (Frankfurt am Main, DE) is physically plausible given the RTT.
+  ──────────────────────────────────────────────────────────────
+  Probe 54294 (US) | src=67.181.107.171 → dst=142.251.218.97
+    Min RTT        = 26.099 ms
+    Max distance   = 2,609.9 km  (d ≤ 26.099 ms × 200 / 2)
+    Probe coords   = (38.7595, -120.5785)
+    GeoIP claims   = San Jose, US (37.3394, -121.8950) | AS15169 Google LLC
+    Probe → GeoIP  = 195.5 km
+    RTT circle r   = 2,609.9 km
+    ✅ CONSISTENT  — 195.5 km ≤ 2,609.9 km
+       GeoIP-claimed location (San Jose, US) is physically plausible given the RTT.
+
+──────────────────────────────────────────────────────────────────────
+ANYCAST DETECTION — MULTI-REGION ANALYSIS
+──────────────────────────────────────────────────────────────────────
+
+  [Signal A] Destination IP diversity across regions:
+      DE → 142.251.127.132, 142.251.14.132
+      IN → 142.250.192.193, 142.250.193.65, 142.250.66.1, 142.250.67.33, 142.251.221.161
+      SG → 172.217.194.132, 74.125.24.132
+      US → 142.250.177.65, 142.251.218.97
+  → 11 distinct IPs observed across regions.
+    Different IPs per region = strong GeoDNS / Anycast evidence.
+
+  [Signal B] GeoIP cross-validation pattern:
+    CONSISTENT    regions : ['DE', 'IN', 'SG', 'US']
+    CONTRADICTED  regions : none
+  → All regions CONSISTENT: GeoIP accurate, each region
+    resolves to a local node (GeoDNS-based Anycast like Akamai).
+
+  [Signal C] RTT vs. expected travel time to GeoIP location:
+    (Expected RTT = 2 × distance_to_GeoIP / 200 km/ms)
+    Probe  1002359 (IN) | actual=78.69ms  expected=5.2ms  → ANOMALY (ratio=15.3x)
+    Probe  1002639 (SG) | actual=2.22ms  expected=0.1ms  → ANOMALY (ratio=28.7x)
+    Probe  1009077 (SG) | actual=2.87ms  expected=0.1ms  → ANOMALY (ratio=30.3x)
+    Probe  1010710 (IN) | actual=5.15ms  expected=0.0ms  → ANOMALY (ratio=675.4x)
+    Probe  1011068 (IN) | actual=12.85ms  expected=6.1ms  → ANOMALY (ratio=2.1x)
+    Probe  1013717 (DE) | actual=19.88ms  expected=5.2ms  → ANOMALY (ratio=3.8x)
+    Probe  1014529 (IN) | actual=15.01ms  expected=5.3ms  → ANOMALY (ratio=2.8x)
+    Probe  1014958 (US) | actual=13.55ms  expected=7.3ms  → MATCHES_GEOIP (RTT ≈ expected)
+    Probe    25250 (IN) | actual=1.90ms  expected=0.1ms  → ANOMALY (ratio=16.0x)
+    Probe    30764 (DE) | actual=8.37ms  expected=1.6ms  → ANOMALY (ratio=5.4x)
+    Probe    54294 (US) | actual=26.10ms  expected=2.0ms  → ANOMALY (ratio=13.3x)
+  → Majority of probes show RTT ≈ expected: server is near its GeoIP-claimed location.
+
+──────────────────────────────────────────────────────────────────────
+  FINAL ANYCAST VERDICT
+──────────────────────────────────────────────────────────────────────
+  Signal A (IP diversity)         : ANYCAST
+  Signal B (GeoIP pattern)        : ANYCAST_ACCURATE_GEOIP
+  Signal C (RTT vs expected)      : MATCHES_GEOIP
+
+  → ✅ Anycast/GeoDNS CONFIRMED (Akamai-style)
+   Each region resolves to a dedicated local PoP.
+   GeoIP labels are accurate. Indian users are served
+   from India-based infrastructure.
+
+──────────────────────────────────────────────────────────────────────
+  RTT SUMMARY BY REGION
+──────────────────────────────────────────────────────────────────────
+      IN  min=1.900 ms  max=78.695 ms  n=5
+      SG  min=2.216 ms  max=2.873 ms  n=2
+      DE  min=8.366 ms  max=19.879 ms  n=2
+      US  min=13.552 ms  max=26.099 ms  n=2
+
+

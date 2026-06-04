@@ -23,7 +23,7 @@ import socket
 # ─────────────────────────────────────────────────────────────
 # CONFIG — edit these before running
 # ─────────────────────────────────────────────────────────────
-API_KEY   = "55579dc0-ceb1-42b6-a9ef-6eb2ab309ae5"  # to be changed
+API_KEY   = "Your_RIPE_Atlas_API_Key"  # to be changed
 PING_ID   = 173431562   # to be changed
 TRACE_ID  = 173431563   # to be changed
 
@@ -32,7 +32,7 @@ PROVIDER  = "MobiKwik"  # to be changed
 ENDPOINT  = "Fraud Detection: sentry.mobikwik.com"   # to be changed
 TARGET_HOST = "sentry.mobikwik.com"   # to be changed
 
-IPINFO_TOKEN = "e5ed9fe7fe0d43"
+IPINFO_TOKEN = "Your_IPInfo_API_Token"  # to be changed
 
 # ─────────────────────────────────────────────────────────────
 # SECTION 0 — OUTPUT UTILITIES

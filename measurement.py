@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "55579dc0-ceb1-42b6-a9ef-6eb2ab309ae5"  # to be changed
+API_KEY = "Your_RIPE_Atlas_API_Key"  # to be changed
 # use the domain instead of IP address!
 TARGET_HOST = "sentry.mobikwik.com"  # to be changed
 

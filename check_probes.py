@@ -9,7 +9,7 @@ Usage:
 import requests
 import time
 
-API_KEY = "55579dc0-ceb1-42b6-a9ef-6eb2ab309ae5"   # same as analyze_atlas.py
+API_KEY = "Your_RIPE_Atlas_API_Key"   # same as analyze_atlas.py
 PING_ID = 173124378                    # to be changed
 
 def atlas_get(path):

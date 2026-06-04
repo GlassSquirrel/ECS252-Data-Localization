@@ -1,0 +1,652 @@
+======================================================================
+  RIPE Atlas Analysis Report
+  Provider  : MobiKwik
+  Endpoint  : Fraud Detection: sentry.mobikwik.com
+  Ping MSM  : 173431562
+  Trace MSM : 173431563
+  Run at    : 2026-05-30 21:55 UTC
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+  PING ANALYSIS
+──────────────────────────────────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════════════
+PING RESULTS — RTT-to-Distance + GeoIP Cross-Validation
+══════════════════════════════════════════════════════════════════════
+
+  Logic: probe draws a circle of radius = RTT × 200/2 km.
+         If GeoIP-claimed server location falls OUTSIDE this
+         circle, the GeoIP label is physically impossible —
+         the server must be closer (Anycast PoP effect).
+
+  ──────────────────────────────────────────────────────────────
+  Probe 1002932 (IN) | src=106.205.169.248 → dst=104.18.0.215
+    Min RTT        = 30.656 ms
+    Max distance   = 3,065.6 km  (d ≤ 30.656 ms × 200 / 2)
+    Probe coords   = (27.4785, 79.1785)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 12,419.9 km
+    RTT circle r   = 3,065.6 km
+    ❌ CONTRADICTED — 12,419.9 km > 3,065.6 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 1008829 (IN) | src=49.207.135.181 → dst=104.18.0.215
+    Min RTT        = 6.416 ms
+    Max distance   = 641.6 km  (d ≤ 6.416 ms × 200 / 2)
+    Probe coords   = (12.9715, 77.5885)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 14,000.7 km
+    RTT circle r   = 641.6 km
+    ❌ CONTRADICTED — 14,000.7 km > 641.6 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 1015590 (SG) | src=118.200.110.46 → dst=104.18.1.215
+    Min RTT        = 3.485 ms
+    Max distance   = 348.5 km  (d ≤ 3.485 ms × 200 / 2)
+    Probe coords   = (1.3575, 103.9415)
+    [debug] 104.18.1.215 → status=200 body={
+  "ip": "104.18.1.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.1.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 13,574.9 km
+    RTT circle r   = 348.5 km
+    ❌ CONTRADICTED — 13,574.9 km > 348.5 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 28677 (US) | src=71.196.203.142 → dst=104.18.0.215
+    Min RTT        = 11.868 ms
+    Max distance   = 1,186.8 km  (d ≤ 11.868 ms × 200 / 2)
+    Probe coords   = (39.8905, -104.8795)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 1,533.3 km
+    RTT circle r   = 1,186.8 km
+    ❌ CONTRADICTED — 1,533.3 km > 1,186.8 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 31389 (US) | src=100.36.125.120 → dst=0.0.0.0
+    Min RTT        = 0.250 ms
+    Max distance   = 25.0 km  (d ≤ 0.250 ms × 200 / 2)
+    Probe coords   = (38.7915, -77.3085)
+    [debug] 0.0.0.0 → status=200 body={
+  "ip": "0.0.0.0",
+  "bogon": true
+}
+    [debug] 0.0.0.0 → loc=
+    [debug] 0.0.0.0 → status=200 body={
+  "ip": "0.0.0.0",
+  "bogon": true
+}
+    [debug] 0.0.0.0 → loc=
+    [debug] 0.0.0.0 → status=200 body={
+  "ip": "0.0.0.0",
+  "bogon": true
+}
+    [debug] 0.0.0.0 → loc=
+    ⚠️  GeoIP lookup failed for 0.0.0.0
+  ──────────────────────────────────────────────────────────────
+  Probe 385 (IN) | src=182.71.53.98 → dst=104.18.0.215
+    Min RTT        = 6.892 ms
+    Max distance   = 689.2 km  (d ≤ 6.892 ms × 200 / 2)
+    Probe coords   = (28.4995, 77.0915)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 12,372.6 km
+    RTT circle r   = 689.2 km
+    ❌ CONTRADICTED — 12,372.6 km > 689.2 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 50649 (FR) | src=176.166.40.118 → dst=104.18.1.215
+    Min RTT        = 3.112 ms
+    Max distance   = 311.2 km  (d ≤ 3.112 ms × 200 / 2)
+    Probe coords   = (48.8615, 2.3495)
+    [debug] 104.18.1.215 → status=200 body={
+  "ip": "104.18.1.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.1.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 8,953.0 km
+    RTT circle r   = 311.2 km
+    ❌ CONTRADICTED — 8,953.0 km > 311.2 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 51325 (DE) | src=79.219.49.65 → dst=104.18.0.215
+    Min RTT        = 5.684 ms
+    Max distance   = 568.4 km  (d ≤ 5.684 ms × 200 / 2)
+    Probe coords   = (48.1295, 11.6385)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 9,438.3 km
+    RTT circle r   = 568.4 km
+    ❌ CONTRADICTED — 9,438.3 km > 568.4 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 60641 (IN) | src=117.214.165.90 → dst=104.18.0.215
+    Min RTT        = 47.355 ms
+    Max distance   = 4,735.5 km  (d ≤ 47.355 ms × 200 / 2)
+    Probe coords   = (21.9275, 86.7595)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 12,711.3 km
+    RTT circle r   = 4,735.5 km
+    ❌ CONTRADICTED — 12,711.3 km > 4,735.5 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 62302 (IN) | src=49.36.144.94 → dst=104.18.0.215
+    Min RTT        = 4.585 ms
+    Max distance   = 458.5 km  (d ≤ 4.585 ms × 200 / 2)
+    Probe coords   = (28.6685, 77.4475)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 12,344.7 km
+    RTT circle r   = 458.5 km
+    ❌ CONTRADICTED — 12,344.7 km > 458.5 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 62997 (IN) | src=122.161.48.56 → dst=104.18.0.215
+    Min RTT        = 5.183 ms
+    Max distance   = 518.3 km  (d ≤ 5.183 ms × 200 / 2)
+    Probe coords   = (28.6205, 77.4215)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 12,350.5 km
+    RTT circle r   = 518.3 km
+    ❌ CONTRADICTED — 12,350.5 km > 518.3 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+  ──────────────────────────────────────────────────────────────
+  Probe 64096 (US) | src=97.185.253.106 → dst=sentry.mobikwik.com
+    ⚠️  No RTT returned — likely blocked by WAF/firewall
+  ──────────────────────────────────────────────────────────────
+  Probe 7616 (NL) | src=145.220.0.55 → dst=104.18.0.215
+    Min RTT        = 0.721 ms
+    Max distance   = 72.1 km  (d ≤ 0.721 ms × 200 / 2)
+    Probe coords   = (52.3605, 4.9475)
+    [debug] 104.18.0.215 → status=200 body={
+  "ip": "104.18.0.215",
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "loc": "37.7621,-122.3971",
+  "org": "AS13335 Cloudflare, Inc.",
+  "postal": "94107",
+  "timezone": 
+    [debug] 104.18.0.215 → loc=37.7621,-122.3971
+    GeoIP claims   = San Francisco, US (37.7621, -122.3971) | AS13335 Cloudflare, Inc.
+    Probe → GeoIP  = 8,776.2 km
+    RTT circle r   = 72.1 km
+    ❌ CONTRADICTED — 8,776.2 km > 72.1 km
+       Server CANNOT be in San Francisco, US.
+       GeoIP label is stale/wrong (typical Anycast: a local PoP is serving this probe, not the registered location).
+
+──────────────────────────────────────────────────────────────────────
+ANYCAST DETECTION — MULTI-REGION ANALYSIS
+──────────────────────────────────────────────────────────────────────
+
+  [Signal A] Destination IP diversity across regions:
+      DE → 104.18.0.215
+      FR → 104.18.1.215
+      IN → 104.18.0.215
+      NL → 104.18.0.215
+      SG → 104.18.1.215
+      US → 0.0.0.0, 104.18.0.215
+  → 3 distinct IPs observed across regions.
+    Different IPs per region = strong GeoDNS / Anycast evidence.
+
+  [Signal B] GeoIP cross-validation pattern:
+    CONSISTENT    regions : none
+    CONTRADICTED  regions : ['DE', 'FR', 'IN', 'NL', 'SG', 'US']
+  → All regions CONTRADICTED: IP registered far away but
+    local PoPs serve traffic everywhere (classic Cloudflare-style Anycast).
+
+  [Signal C] RTT vs. expected travel time to GeoIP location:
+    (Expected RTT = 2 × distance_to_GeoIP / 200 km/ms)
+    Probe  1002932 (IN) | actual=30.66ms  expected=124.2ms  → LOCAL_POP (RTT << expected)
+    Probe  1008829 (IN) | actual=6.42ms  expected=140.0ms  → LOCAL_POP (RTT << expected)
+    Probe  1015590 (SG) | actual=3.49ms  expected=135.7ms  → LOCAL_POP (RTT << expected)
+    Probe    28677 (US) | actual=11.87ms  expected=15.3ms  → MATCHES_GEOIP (RTT ≈ expected)
+    Probe      385 (IN) | actual=6.89ms  expected=123.7ms  → LOCAL_POP (RTT << expected)
+    Probe    50649 (FR) | actual=3.11ms  expected=89.5ms  → LOCAL_POP (RTT << expected)
+    Probe    51325 (DE) | actual=5.68ms  expected=94.4ms  → LOCAL_POP (RTT << expected)
+    Probe    60641 (IN) | actual=47.36ms  expected=127.1ms  → LOCAL_POP (RTT << expected)
+    Probe    62302 (IN) | actual=4.59ms  expected=123.4ms  → LOCAL_POP (RTT << expected)
+    Probe    62997 (IN) | actual=5.18ms  expected=123.5ms  → LOCAL_POP (RTT << expected)
+    Probe     7616 (NL) | actual=0.72ms  expected=87.8ms  → LOCAL_POP (RTT << expected)
+  → Majority of probes show RTT << expected: local PoPs serve traffic, not the GeoIP-registered location.
+
+──────────────────────────────────────────────────────────────────────
+  FINAL ANYCAST VERDICT
+──────────────────────────────────────────────────────────────────────
+  Signal A (IP diversity)         : ANYCAST
+  Signal B (GeoIP pattern)        : ANYCAST_STALE_GEOIP
+  Signal C (RTT vs expected)      : LOCAL_POPS
+
+  → ✅ Anycast CONFIRMED (Cloudflare-style)
+   Local PoPs serve traffic but IP registration is
+   centralized (e.g., in the US). GeoIP databases
+   misreport the actual serving location.
+
+──────────────────────────────────────────────────────────────────────
+  RTT SUMMARY BY REGION
+──────────────────────────────────────────────────────────────────────
+      IN  min=4.585 ms  max=47.355 ms  n=6
+      SG  min=3.485 ms  max=3.485 ms  n=1
+      DE  min=5.684 ms  max=5.684 ms  n=1
+      US  min=0.250 ms  max=11.868 ms  n=2
+
+
+──────────────────────────────────────────────────────────────────────
+  ANNOTATED PATHS
+──────────────────────────────────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════════════
+ANNOTATED TRACEROUTE PATHS
+══════════════════════════════════════════════════════════════════════
+
+  ──────────────────────────────────────────────────────────────
+  Probe 1002932 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 1
+    hop   1: 10.0.160.1                                        0.2 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 192.168.8.1                                       0.4 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: *                                                (no response)
+    hop   4: *                                                (no response)
+    hop   5: 125.21.57.78                                     20.2 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   6: 125.21.57.77                                     14.9 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   7: 116.119.73.221                                   18.8 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   8: 182.79.223.5                                     19.9 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   9: 104.23.231.30                                    19.0 ms
+           IPinfo : IN / New Delhi / AS13335 Cloudflare, Inc.
+    hop  10: 104.18.0.215                                     19.8 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+           WHOIS  : ASN 13335 (CLOUDFLARENET - Cloudflare, Inc., US) | net=CLOUDFLARENET | cc=None
+           rDNS   : (no PTR record)
+
+    Foreign ASN without RTT spike:
+      hop  10: 104.18.0.215                                  RTT=19.8 ms  ASN=CLOUDFLARENET - Cloudflare, Inc., US  rDNS=no PTR record
+
+    Summary for probe 1002932 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 1  at hops [10]
+
+  ──────────────────────────────────────────────────────────────
+  Probe 1008829 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 1
+    hop   1: 172.18.0.1                                        0.2 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 192.168.0.1                                       0.6 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: *                                                (no response)
+    hop   4: *                                                (no response)
+    hop   5: *                                                (no response)
+    hop   6: *                                                (no response)
+    hop   7: 49.205.72.39                                      5.7 ms
+           IPinfo : IN / Saint Thomas Mount / AS24309 Atria Convergence Technologies Pvt. Ltd. Broadband Internet Service Provider INDIA
+    hop   8: 103.16.203.73                                     7.1 ms
+           IPinfo : IN / Chennai / AS24309 Atria Convergence Technologies Pvt. Ltd. Broadband Internet Service Provider INDIA
+    hop   9: 162.158.52.35                                     6.9 ms
+           IPinfo : IN / Chennai / AS13335 Cloudflare, Inc.
+    hop  10: 104.18.0.215                                      6.8 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+           WHOIS  : ASN 13335 (CLOUDFLARENET - Cloudflare, Inc., US) | net=CLOUDFLARENET | cc=None
+           rDNS   : (no PTR record)
+
+    Foreign ASN without RTT spike:
+      hop  10: 104.18.0.215                                  RTT=6.8 ms  ASN=CLOUDFLARENET - Cloudflare, Inc., US  rDNS=no PTR record
+
+    Summary for probe 1008829 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 1  at hops [10]
+
+  ──────────────────────────────────────────────────────────────
+  Probe 1015590 (SG)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.50.1                                      1.4 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 118.200.111.254                                   2.6 ms
+           IPinfo : SG / Singapore / AS9506 Singtel Fibre Broadband
+    hop   3: *                                                (no response)
+    hop   4: 165.21.193.233                                    2.7 ms
+           IPinfo : SG / Singapore / AS3758 SingNet
+    hop   5: *                                                (no response)
+    hop   6: *                                                (no response)
+    hop   7: *                                                (no response)
+    hop   8: *                                                (no response)
+    hop   9: *                                                (no response)
+    hop 255 (destination): *                                                 N/A   
+
+    No egress evidence detected for probe 1015590 (SG).
+
+    Summary for probe 1015590 (SG):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 28677 (US)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.1.1                                       1.7 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 100.93.93.194                                     8.1 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: 96.216.161.41                                     9.7 ms
+           IPinfo : US / Denver / AS7922 Comcast Cable Communications, LLC
+    hop   4: 96.216.176.117                                    9.7 ms
+           IPinfo : US / Denver / AS7922 Comcast Cable Communications, LLC
+    hop   5: 68.86.103.29                                     14.3 ms
+           IPinfo : US / Denver / AS7922 Comcast Cable Communications, LLC
+    hop   6: 96.110.43.253                                    13.2 ms
+           IPinfo : US / Denver / AS7922 Comcast Cable Communications, LLC
+    hop   7: 96.110.33.114                                    10.5 ms
+           IPinfo : US / Denver / AS7922 Comcast Cable Communications, LLC
+    hop   8: *                                                (no response)
+    hop   9: 172.68.32.28                                     11.0 ms
+           IPinfo : US / Denver / AS13335 Cloudflare, Inc.
+    hop  10: 104.18.1.215                                     11.0 ms
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+
+    No egress evidence detected for probe 28677 (US).
+
+    Summary for probe 28677 (US):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 31389 (US)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: *                                                (no response)
+    hop   2: *                                                (no response)
+    hop   3: *                                                (no response)
+    hop   4: *                                                (no response)
+    hop   5: *                                                (no response)
+    hop 255 (destination): *                                                 N/A   
+
+    No egress evidence detected for probe 31389 (US).
+
+    Summary for probe 31389 (US):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 385 (IN)  |  cliffs: 1  |  confirmed egress: 0  |  inconclusive: 1  |  foreign no-cliff: 1
+    hop   1: 192.168.142.1                                     2.6 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 182.71.53.97                                      2.6 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   3: 182.74.14.241                                    25.7 ms  ⚡ RTT +23 ms  ⚠️  RTT spike, IPinfo domestic
+           IPinfo : IN / New Delhi / AS9498 BHARTI Airtel Ltd.
+           WHOIS  : ASN 9498 (BBIL-AP - BHARTI Airtel Ltd., IN) | net=OCMD-2748871-Gurgaon | cc=IN
+           rDNS   : (no PTR record)
+    hop   4: 116.119.55.232                                    6.6 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   5: *                                                (no response)
+    hop   6: 104.23.231.30                                     6.8 ms
+           IPinfo : IN / New Delhi / AS13335 Cloudflare, Inc.
+    hop   7: 104.18.1.215                                      7.3 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+           WHOIS  : ASN 13335 (CLOUDFLARENET - Cloudflare, Inc., US) | net=CLOUDFLARENET | cc=None
+           rDNS   : (no PTR record)
+
+    Inconclusive hops (RTT spike, IPinfo still domestic):
+      hop   3: 182.74.14.241                                 RTT=25.7 ms  ASN=BBIL-AP - BHARTI Airtel Ltd., IN  rDNS=no PTR record
+
+    Foreign ASN without RTT spike:
+      hop   7: 104.18.1.215                                  RTT=7.3 ms  ASN=CLOUDFLARENET - Cloudflare, Inc., US  rDNS=no PTR record
+
+    Summary for probe 385 (IN):
+      RTT cliffs detected        : 1  at hops [3]
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 1  at hops [3]
+      Foreign no-cliff           : 1  at hops [7]
+      ⚠️  Some egress boundaries may be obscured by silent (*) hops
+
+  ──────────────────────────────────────────────────────────────
+  Probe 50649 (FR)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.200.254                                   1.6 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: *                                                (no response)
+    hop   3: *                                                (no response)
+    hop   4: *                                                (no response)
+    hop   5: *                                                (no response)
+    hop   6: *                                                (no response)
+    hop 255 (destination): 104.18.0.215                                      3.5 ms
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+
+    No egress evidence detected for probe 50649 (FR).
+
+    Summary for probe 50649 (FR):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 51325 (DE)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 172.16.32.1                                       0.9 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 192.168.178.1                                     1.3 ms
+           IPinfo : (IPinfo unavailable)
+    hop   3: 62.155.242.38                                     5.7 ms
+           IPinfo : DE / Munich / AS3320 Deutsche Telekom AG
+    hop   4: 62.153.181.34                                     6.7 ms
+           IPinfo : DE / Munich / AS3320 Deutsche Telekom AG
+    hop   5: 80.150.168.185                                    5.7 ms
+           IPinfo : DE / Munich / AS3320 Deutsche Telekom AG
+    hop   6: 141.136.100.98                                    9.9 ms
+           IPinfo : DE / Munich / AS3257 GTT Communications Inc.
+    hop   7: 172.68.108.5                                      6.3 ms
+           IPinfo : DE / Munich / AS13335 Cloudflare, Inc.
+    hop   8: 104.18.0.215                                      5.7 ms
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+
+    No egress evidence detected for probe 51325 (DE).
+
+    Summary for probe 51325 (DE):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 60641 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 192.168.1.1                                       0.9 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 117.214.164.1                                     1.1 ms
+           IPinfo : IN / Baripāda / AS9829 National Internet Backbone
+    hop   3: 218.248.106.122                                   9.2 ms
+           IPinfo : IN / Baripāda / AS9829 National Internet Backbone
+    hop   4: *                                                (no response)
+    hop   5: *                                                (no response)
+    hop   6: *                                                (no response)
+    hop   7: *                                                (no response)
+    hop   8: *                                                (no response)
+    hop 255 (destination): 104.18.0.215                                     46.3 ms
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+
+    No egress evidence detected for probe 60641 (IN).
+
+    Summary for probe 60641 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 62302 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+
+    No egress evidence detected for probe 62302 (IN).
+
+    Summary for probe 62302 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 62997 (IN)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 1
+    hop   1: 192.168.1.1                                       0.9 ms
+           IPinfo : (IPinfo unavailable)
+    hop   2: 122.176.127.68                                    4.3 ms
+           IPinfo : IN / Delhi / AS24560 Bharti Airtel Ltd., Telemedia Services
+    hop   3: 182.79.117.225                                    3.1 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   4: 116.119.73.221                                    6.0 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   5: 182.79.223.5                                      5.8 ms
+           IPinfo : IN / Delhi / AS9498 BHARTI Airtel Ltd.
+    hop   6: 104.23.231.30                                     4.2 ms
+           IPinfo : IN / New Delhi / AS13335 Cloudflare, Inc.
+    hop   7: 104.18.1.215                                      6.1 ms  ⚠️  foreign ASN without RTT spike
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+           WHOIS  : ASN 13335 (CLOUDFLARENET - Cloudflare, Inc., US) | net=CLOUDFLARENET | cc=None
+           rDNS   : (no PTR record)
+
+    Foreign ASN without RTT spike:
+      hop   7: 104.18.1.215                                  RTT=6.1 ms  ASN=CLOUDFLARENET - Cloudflare, Inc., US  rDNS=no PTR record
+
+    Summary for probe 62997 (IN):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 1  at hops [7]
+
+  ──────────────────────────────────────────────────────────────
+  Probe 64096 (US)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+
+    No egress evidence detected for probe 64096 (US).
+
+    Summary for probe 64096 (US):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+
+  ──────────────────────────────────────────────────────────────
+  Probe 7616 (NL)  |  cliffs: 0  |  confirmed egress: 0  |  inconclusive: 0  |  foreign no-cliff: 0
+    hop   1: 145.220.0.1                                       0.2 ms
+           IPinfo : NL / Amsterdam / AS1101 IP-EEND BV
+    hop   2: 192.12.54.190                                     0.3 ms
+           IPinfo : NL / Amsterdam / AS1101 IP-EEND BV
+    hop   3: 185.1.160.217                                     1.0 ms
+           IPinfo : NL / Amsterdam / ?
+    hop   4: 141.101.65.93                                     1.0 ms
+           IPinfo : NL / Amsterdam / AS13335 Cloudflare, Inc.
+    hop   5: *                                                (no response)
+    hop   6: 104.18.1.215                                      1.2 ms
+           IPinfo : US / San Francisco / AS13335 Cloudflare, Inc.
+
+    No egress evidence detected for probe 7616 (NL).
+
+    Summary for probe 7616 (NL):
+      RTT cliffs detected        : 0  at hops []
+      Confirmed egress hops      : 0  at hops []
+      Inconclusive (cliff only)  : 0  at hops []
+      Foreign no-cliff           : 0  at hops []
+      ⚠️  Some egress boundaries may be obscured by silent (*) hops
+

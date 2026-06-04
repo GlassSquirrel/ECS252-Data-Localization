@@ -1,0 +1,3207 @@
+{
+  "provider": "MobiKwik",
+  "endpoint": "Fraud Detection: sentry.mobikwik.com",
+  "ping_msm_id": 173431562,
+  "trace_msm_id": 173431563,
+  "run_at": "2026-05-30 21:55 UTC",
+  "probe_map": {
+    "64096": "US",
+    "385": "IN",
+    "60641": "IN",
+    "7616": "NL",
+    "28677": "US",
+    "1015590": "SG",
+    "1002932": "IN",
+    "51325": "DE",
+    "62997": "IN",
+    "1008829": "IN",
+    "50649": "FR",
+    "31389": "US",
+    "62302": "IN"
+  },
+  "ping_results": [
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 47,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 81.860348,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "10.0.160.20",
+      "proto": "ICMP",
+      "ttl": 56,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 46.146778
+        },
+        {
+          "rtt": 30.65618
+        },
+        {
+          "rtt": 30.789351
+        },
+        {
+          "rtt": 31.497555
+        },
+        {
+          "rtt": 36.182969
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 30.65618,
+      "max": 46.146778,
+      "avg": 35.0545666,
+      "msm_id": 173431562,
+      "prb_id": 1002932,
+      "timestamp": 1779392352,
+      "msm_name": "Ping",
+      "from": "106.205.169.248",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392377
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 25,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 152.962556,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "172.18.0.2",
+      "proto": "ICMP",
+      "ttl": 55,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 6.539227
+        },
+        {
+          "rtt": 6.415642
+        },
+        {
+          "rtt": 6.800779
+        },
+        {
+          "rtt": 6.642147
+        },
+        {
+          "rtt": 6.506094
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 6.415642,
+      "max": 6.800779,
+      "avg": 6.5807778,
+      "msm_id": 173431562,
+      "prb_id": 1008829,
+      "timestamp": 1779392352,
+      "msm_name": "Ping",
+      "from": "49.207.135.181",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392396
+    },
+    {
+      "fw": 5120,
+      "mver": "2.6.4",
+      "lts": 48,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 13.089396,
+      "af": 4,
+      "dst_addr": "104.18.1.215",
+      "src_addr": "192.168.50.9",
+      "proto": "ICMP",
+      "ttl": 53,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 3.529657
+        },
+        {
+          "rtt": 3.485239
+        },
+        {
+          "rtt": 3.841787
+        },
+        {
+          "rtt": 3.668659
+        },
+        {
+          "rtt": 3.668409
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 3.485239,
+      "max": 3.841787,
+      "avg": 3.6387501999999996,
+      "msm_id": 173431562,
+      "prb_id": 1015590,
+      "timestamp": 1779392352,
+      "msm_name": "Ping",
+      "from": "118.200.110.46",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392373
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 19,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 43.471664,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "192.168.1.43",
+      "proto": "ICMP",
+      "ttl": 55,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 12.863293
+        },
+        {
+          "rtt": 12.158352
+        },
+        {
+          "rtt": 11.999918
+        },
+        {
+          "rtt": 12.003462
+        },
+        {
+          "rtt": 11.867587
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 11.867587,
+      "max": 12.863293,
+      "avg": 12.1785224,
+      "msm_id": 173431562,
+      "prb_id": 28677,
+      "timestamp": 1779392351,
+      "msm_name": "Ping",
+      "from": "71.196.203.142",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392371
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 10,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 9.09752,
+      "af": 4,
+      "dst_addr": "0.0.0.0",
+      "src_addr": "127.0.0.1",
+      "proto": "ICMP",
+      "ttl": 64,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 0.415951
+        },
+        {
+          "rtt": 0.250086
+        },
+        {
+          "rtt": 0.249881
+        },
+        {
+          "rtt": 0.261715
+        },
+        {
+          "rtt": 0.351911
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 0.249881,
+      "max": 0.415951,
+      "avg": 0.3059088,
+      "msm_id": 173431562,
+      "prb_id": 31389,
+      "timestamp": 1779392351,
+      "msm_name": "Ping",
+      "from": "100.36.125.120",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392391
+    },
+    {
+      "fw": 4790,
+      "lts": 42,
+      "dst_name": "sentry.mobikwik.com",
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "192.168.142.100",
+      "proto": "ICMP",
+      "ttl": 58,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 7.716097
+        },
+        {
+          "rtt": 7.262978
+        },
+        {
+          "rtt": 7.203842
+        },
+        {
+          "rtt": 7.17005
+        },
+        {
+          "rtt": 6.892034
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 6.892034,
+      "max": 7.716097,
+      "avg": 7.2490002,
+      "msm_id": 173431562,
+      "prb_id": 385,
+      "timestamp": 1779392350,
+      "msm_name": "Ping",
+      "from": "182.71.53.98",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392366
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 3,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 27.844042,
+      "af": 4,
+      "dst_addr": "104.18.1.215",
+      "src_addr": "192.168.200.4",
+      "proto": "ICMP",
+      "ttl": 57,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 3.111709
+        },
+        {
+          "rtt": 3.423875
+        },
+        {
+          "rtt": 3.492584
+        },
+        {
+          "rtt": 3.383917
+        },
+        {
+          "rtt": 3.47475
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 3.111709,
+      "max": 3.492584,
+      "avg": 3.3773670000000005,
+      "msm_id": 173431562,
+      "prb_id": 50649,
+      "timestamp": 1779392352,
+      "msm_name": "Ping",
+      "from": "176.166.40.118",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392374
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 37,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 16.21225,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "172.16.32.32",
+      "proto": "ICMP",
+      "ttl": 57,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 6.710792
+        },
+        {
+          "rtt": 5.766042
+        },
+        {
+          "rtt": 5.751625
+        },
+        {
+          "rtt": 5.683958
+        },
+        {
+          "rtt": 5.859916
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 5.683958,
+      "max": 6.710792,
+      "avg": 5.954466600000001,
+      "msm_id": 173431562,
+      "prb_id": 51325,
+      "timestamp": 1779392353,
+      "msm_name": "Ping",
+      "from": "79.219.49.65",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392352
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 20,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 57.831806,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "192.168.1.36",
+      "proto": "ICMP",
+      "ttl": 54,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 47.525599
+        },
+        {
+          "rtt": 47.457353
+        },
+        {
+          "rtt": 47.355182
+        },
+        {
+          "rtt": 47.585925
+        },
+        {
+          "rtt": 48.04669
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 47.355182,
+      "max": 48.04669,
+      "avg": 47.594149800000004,
+      "msm_id": 173431562,
+      "prb_id": 60641,
+      "timestamp": 1779392352,
+      "msm_name": "Ping",
+      "from": "117.214.165.90",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392361
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 1,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 5030.786651,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "192.168.29.112",
+      "proto": "ICMP",
+      "ttl": 52,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 4.585111
+        },
+        {
+          "rtt": 5.722549
+        },
+        {
+          "rtt": 5.677185
+        },
+        {
+          "rtt": 4.786565
+        },
+        {
+          "rtt": 4.934334
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 4.585111,
+      "max": 5.722549,
+      "avg": 5.1411488,
+      "msm_id": 173431562,
+      "prb_id": 62302,
+      "timestamp": 1779392356,
+      "msm_name": "Ping",
+      "from": "49.36.144.94",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392362
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 15,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 87.87995,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "192.168.1.4",
+      "proto": "ICMP",
+      "ttl": 59,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 5.182558
+        },
+        {
+          "rtt": 5.651401
+        },
+        {
+          "rtt": 8.620556
+        },
+        {
+          "rtt": 8.868578
+        },
+        {
+          "rtt": 6.27858
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 5.182558,
+      "max": 8.868578,
+      "avg": 6.9203345999999994,
+      "msm_id": 173431562,
+      "prb_id": 62997,
+      "timestamp": 1779392351,
+      "msm_name": "Ping",
+      "from": "122.161.48.56",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392352
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 42,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 10.087979,
+      "af": 4,
+      "proto": "ICMP",
+      "size": 64,
+      "result": [
+        {
+          "error": "dns resolution failed: nodename nor servname provided, or not known"
+        }
+      ],
+      "dup": 0,
+      "rcvd": 0,
+      "sent": 0,
+      "min": -1,
+      "max": -1,
+      "avg": -1,
+      "msm_id": 173431562,
+      "prb_id": 64096,
+      "timestamp": 1779392346,
+      "msm_name": "Ping",
+      "from": "97.185.253.106",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392352
+    },
+    {
+      "fw": 5090,
+      "mver": "2.6.4",
+      "lts": 5,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 26.089996,
+      "af": 4,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "145.220.0.55",
+      "proto": "ICMP",
+      "ttl": 60,
+      "size": 64,
+      "result": [
+        {
+          "rtt": 0.7212
+        },
+        {
+          "rtt": 0.812497
+        },
+        {
+          "rtt": 0.725465
+        },
+        {
+          "rtt": 0.833247
+        },
+        {
+          "rtt": 0.770474
+        }
+      ],
+      "dup": 0,
+      "rcvd": 5,
+      "sent": 5,
+      "min": 0.7212,
+      "max": 0.833247,
+      "avg": 0.7725766000000001,
+      "msm_id": 173431562,
+      "prb_id": 7616,
+      "timestamp": 1779392351,
+      "msm_name": "Ping",
+      "from": "145.220.0.55",
+      "type": "ping",
+      "group_id": 173431562,
+      "step": null,
+      "stored_timestamp": 1779392359
+    }
+  ],
+  "trace_results": [
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 14,
+      "endtime": 1779392380,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 81.762021,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "10.0.160.20",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.224
+            },
+            {
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.319
+            },
+            {
+              "from": "10.0.160.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.316
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.561
+            },
+            {
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.432
+            },
+            {
+              "from": "192.168.8.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.583
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "125.21.57.78",
+              "ttl": 61,
+              "size": 92,
+              "rtt": 20.159,
+              "itos": 128
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "125.21.57.78",
+              "ttl": 61,
+              "size": 92,
+              "rtt": 27.361,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "125.21.57.77",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 14.893,
+              "itos": 128
+            },
+            {
+              "from": "125.21.57.77",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 14.939,
+              "itos": 128
+            },
+            {
+              "from": "125.21.57.77",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 21.314,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "116.119.73.221",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 25.447,
+              "itos": 128
+            },
+            {
+              "from": "116.119.73.221",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 50.509,
+              "itos": 128
+            },
+            {
+              "from": "116.119.73.221",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 18.829,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "from": "182.79.223.5",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 34.29,
+              "itos": 128
+            },
+            {
+              "from": "182.79.223.5",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 19.899,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "from": "104.23.231.30",
+              "ttl": 247,
+              "size": 28,
+              "rtt": 36.457,
+              "itos": 128
+            },
+            {
+              "from": "104.23.231.30",
+              "ttl": 247,
+              "size": 28,
+              "rtt": 18.957,
+              "itos": 128
+            },
+            {
+              "from": "104.23.231.30",
+              "ttl": 247,
+              "size": 28,
+              "rtt": 24.375,
+              "itos": 128
+            }
+          ]
+        },
+        {
+          "hop": 10,
+          "result": [
+            {
+              "from": "104.18.0.215",
+              "ttl": 56,
+              "size": 4,
+              "tos": 136,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1300
+                }
+              ],
+              "rtt": 20.12
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 56,
+              "size": 4,
+              "tos": 136,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1300
+                }
+              ],
+              "rtt": 19.836
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 56,
+              "size": 4,
+              "tos": 136,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1300
+                }
+              ],
+              "rtt": 19.923
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 1002932,
+      "timestamp": 1779392347,
+      "msm_name": "Traceroute",
+      "from": "106.205.169.248",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392380
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 6,
+      "endtime": 1779392395,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 152.142723,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "172.18.0.2",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "172.18.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.233
+            },
+            {
+              "from": "172.18.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.194
+            },
+            {
+              "from": "172.18.0.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.268
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "192.168.0.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.696
+            },
+            {
+              "from": "192.168.0.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.601
+            },
+            {
+              "from": "192.168.0.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 0.564
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "late": 8,
+              "from": "10.248.7.25",
+              "ttl": 252,
+              "size": 28
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "49.205.72.39",
+              "ttl": 58,
+              "size": 88,
+              "rtt": 5.727
+            },
+            {
+              "from": "49.205.72.39",
+              "ttl": 58,
+              "size": 88,
+              "rtt": 5.897
+            },
+            {
+              "from": "49.205.72.39",
+              "ttl": 58,
+              "size": 88,
+              "rtt": 5.845
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "from": "103.16.203.73",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 7.119
+            },
+            {
+              "from": "103.16.203.73",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 15.268
+            },
+            {
+              "from": "103.16.203.73",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 7.594
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "from": "162.158.52.35",
+              "ttl": 246,
+              "size": 28,
+              "rtt": 7.4
+            },
+            {
+              "from": "162.158.52.35",
+              "ttl": 246,
+              "size": 28,
+              "rtt": 6.91
+            },
+            {
+              "from": "162.158.52.35",
+              "ttl": 246,
+              "size": 28,
+              "rtt": 7.728
+            }
+          ]
+        },
+        {
+          "hop": 10,
+          "result": [
+            {
+              "from": "104.18.0.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 6.978
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 7.126
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 6.82
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 1008829,
+      "timestamp": 1779392347,
+      "msm_name": "Traceroute",
+      "from": "49.207.135.181",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392396
+    },
+    {
+      "fw": 5120,
+      "mver": "2.6.4",
+      "lts": 2,
+      "endtime": 1779392431,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 13.093896,
+      "dst_addr": "104.18.1.215",
+      "src_addr": "192.168.50.9",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.50.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.43
+            },
+            {
+              "from": "192.168.50.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.431
+            },
+            {
+              "from": "192.168.50.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.36
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "118.200.111.254",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 3.233
+            },
+            {
+              "from": "118.200.111.254",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 2.592
+            },
+            {
+              "from": "118.200.111.254",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 2.738
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "165.21.193.233",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 2.96
+            },
+            {
+              "from": "165.21.193.233",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 2.733
+            },
+            {
+              "from": "165.21.193.233",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 2.851
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 255,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": false,
+      "msm_id": 173431563,
+      "prb_id": 1015590,
+      "timestamp": 1779392347,
+      "msm_name": "Traceroute",
+      "from": "118.200.110.46",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392432
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 17,
+      "endtime": 1779392370,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 65.790326,
+      "dst_addr": "104.18.1.215",
+      "src_addr": "192.168.1.43",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.757
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.735
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.749
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "100.93.93.194",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 8.126,
+              "itos": 32
+            },
+            {
+              "from": "100.93.93.194",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 9.564,
+              "itos": 32
+            },
+            {
+              "from": "100.93.93.194",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 13.161,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "96.216.161.41",
+              "ttl": 62,
+              "size": 88,
+              "rtt": 9.763,
+              "itos": 32
+            },
+            {
+              "from": "96.216.161.41",
+              "ttl": 62,
+              "size": 88,
+              "rtt": 9.69,
+              "itos": 32
+            },
+            {
+              "from": "96.216.161.41",
+              "ttl": 62,
+              "size": 88,
+              "rtt": 9.719,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "96.216.176.117",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 10.269,
+              "itos": 32
+            },
+            {
+              "from": "96.216.176.117",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 9.676,
+              "itos": 32
+            },
+            {
+              "from": "96.216.176.117",
+              "ttl": 61,
+              "size": 88,
+              "rtt": 9.791,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "68.86.103.29",
+              "ttl": 251,
+              "size": 68,
+              "rtt": 14.315,
+              "itos": 32
+            },
+            {
+              "from": "68.86.103.29",
+              "ttl": 251,
+              "size": 68,
+              "rtt": 16.195,
+              "itos": 32
+            },
+            {
+              "from": "68.86.103.29",
+              "ttl": 251,
+              "size": 68,
+              "rtt": 14.272,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "96.110.43.253",
+              "ttl": 250,
+              "size": 68,
+              "rtt": 13.244,
+              "itos": 32
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "96.110.33.114",
+              "ttl": 249,
+              "size": 68,
+              "rtt": 10.516,
+              "itos": 32
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "96.110.33.114",
+              "ttl": 249,
+              "size": 68,
+              "rtt": 13.021,
+              "itos": 32
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 9,
+          "result": [
+            {
+              "from": "172.68.32.28",
+              "ttl": 246,
+              "size": 28,
+              "rtt": 11.043
+            },
+            {
+              "from": "172.68.32.28",
+              "ttl": 246,
+              "size": 28,
+              "rtt": 11.319
+            },
+            {
+              "from": "172.68.32.28",
+              "ttl": 246,
+              "size": 28,
+              "rtt": 12.001
+            }
+          ]
+        },
+        {
+          "hop": 10,
+          "result": [
+            {
+              "from": "104.18.1.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 15.651
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 17.014
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 10.985
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 28677,
+      "timestamp": 1779392346,
+      "msm_name": "Traceroute",
+      "from": "71.196.203.142",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392371
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 7,
+      "endtime": 1779392418,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 7.221389,
+      "dst_addr": "0.0.0.0",
+      "src_addr": "127.0.0.1",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 255,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": false,
+      "msm_id": 173431563,
+      "prb_id": 31389,
+      "timestamp": 1779392346,
+      "msm_name": "Traceroute",
+      "from": "100.36.125.120",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392419
+    },
+    {
+      "fw": 4790,
+      "lts": 36,
+      "endtime": 1779392393,
+      "dst_name": "sentry.mobikwik.com",
+      "dst_addr": "104.18.1.215",
+      "src_addr": "192.168.142.100",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.142.1",
+              "ttl": 255,
+              "size": 88,
+              "rtt": 2.764
+            },
+            {
+              "from": "192.168.142.1",
+              "ttl": 255,
+              "size": 88,
+              "rtt": 2.609
+            },
+            {
+              "from": "192.168.142.1",
+              "ttl": 255,
+              "size": 88,
+              "rtt": 2.619
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "182.71.53.97",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 2.613
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "from": "182.74.14.241",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 25.682
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "from": "116.119.55.232",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 6.583
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "104.23.231.30",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 6.816
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 7.363
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 58,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 7.327
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 385,
+      "timestamp": 1779392345,
+      "msm_name": "Traceroute",
+      "from": "182.71.53.98",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392396
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 2,
+      "endtime": 1779392415,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 23.258667,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "192.168.200.4",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.200.254",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.648
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 255,
+          "result": [
+            {
+              "from": "104.18.0.215",
+              "ttl": 57,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 3.481
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 57,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 3.62
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 56,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 3.594
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 50649,
+      "timestamp": 1779392347,
+      "msm_name": "Traceroute",
+      "from": "176.166.40.118",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392415
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 32,
+      "endtime": 1779392348,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 13.284916,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "172.16.32.32",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "172.16.32.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.123
+            },
+            {
+              "from": "172.16.32.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.903
+            },
+            {
+              "from": "172.16.32.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.886
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "192.168.178.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 1.376
+            },
+            {
+              "from": "192.168.178.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 2.036
+            },
+            {
+              "from": "192.168.178.1",
+              "ttl": 63,
+              "size": 88,
+              "rtt": 1.325
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "62.155.242.38",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 6.212
+            },
+            {
+              "from": "62.155.242.38",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 5.687
+            },
+            {
+              "from": "62.155.242.38",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 5.843
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "62.153.181.34",
+              "ttl": 251,
+              "size": 68,
+              "rtt": 6.736
+            },
+            {
+              "from": "62.153.181.34",
+              "ttl": 251,
+              "size": 68,
+              "rtt": 7.755
+            },
+            {
+              "from": "62.153.181.34",
+              "ttl": 251,
+              "size": 68,
+              "rtt": 7.985
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "80.150.168.185",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 6.664
+            },
+            {
+              "from": "80.150.168.185",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 5.716
+            },
+            {
+              "from": "80.150.168.185",
+              "ttl": 251,
+              "size": 28,
+              "rtt": 5.652
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "141.136.100.98",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 10.456
+            },
+            {
+              "from": "141.136.100.98",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 9.935
+            },
+            {
+              "from": "141.136.100.98",
+              "ttl": 249,
+              "size": 28,
+              "rtt": 15.341
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "172.68.108.5",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 8.309
+            },
+            {
+              "from": "172.68.108.5",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 6.339
+            },
+            {
+              "from": "172.68.108.5",
+              "ttl": 248,
+              "size": 28,
+              "rtt": 6.905
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "from": "104.18.0.215",
+              "ttl": 57,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 5.954
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 57,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 6.129
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 57,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 5.652
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 51325,
+      "timestamp": 1779392348,
+      "msm_name": "Traceroute",
+      "from": "79.219.49.65",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392352
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 16,
+      "endtime": 1779392407,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 107.916455,
+      "dst_addr": "104.18.0.215",
+      "src_addr": "192.168.1.36",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.663
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.917
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.9
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "117.214.164.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 5.435
+            },
+            {
+              "from": "117.214.164.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 1.968
+            },
+            {
+              "from": "117.214.164.1",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 1.068
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "218.248.106.122",
+              "ttl": 253,
+              "size": 68,
+              "rtt": 9.225
+            },
+            {
+              "from": "218.248.106.122",
+              "ttl": 253,
+              "size": 68,
+              "rtt": 9.204
+            },
+            {
+              "from": "218.248.106.122",
+              "ttl": 253,
+              "size": 68,
+              "rtt": 9.317
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 8,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 255,
+          "result": [
+            {
+              "from": "104.18.0.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 46.494
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 46.504
+            },
+            {
+              "from": "104.18.0.215",
+              "ttl": 55,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 46.329
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 60641,
+      "timestamp": 1779392347,
+      "msm_name": "Traceroute",
+      "from": "117.214.165.90",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392408
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 6,
+      "endtime": 1779392361,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 14980.86462,
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 0,
+      "result": [
+        {
+          "error": "name resolution failed: non-recoverable failure in name resolution"
+        }
+      ],
+      "destination_ip_responded": false,
+      "msm_id": 173431563,
+      "prb_id": 62302,
+      "timestamp": 1779392361,
+      "msm_name": "Traceroute",
+      "from": "49.36.144.94",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392362
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 15,
+      "endtime": 1779392351,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 82.7794,
+      "dst_addr": "104.18.1.215",
+      "src_addr": "192.168.1.4",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.414
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 0.872
+            },
+            {
+              "from": "192.168.1.1",
+              "ttl": 64,
+              "size": 88,
+              "rtt": 1.147
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "122.176.127.68",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 4.282
+            },
+            {
+              "from": "122.176.127.68",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 6.377
+            },
+            {
+              "from": "122.176.127.68",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 10.304
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "182.79.117.225",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 3.123
+            },
+            {
+              "from": "182.79.117.225",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 6.477
+            },
+            {
+              "from": "182.79.117.225",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 6.959
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "116.119.73.221",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 6.385
+            },
+            {
+              "from": "116.119.73.221",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 6.02
+            },
+            {
+              "from": "116.119.73.221",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 6.437
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "from": "182.79.223.5",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 7.593
+            },
+            {
+              "from": "182.79.223.5",
+              "ttl": 252,
+              "size": 28,
+              "rtt": 5.807
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "104.23.231.30",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 7.477
+            },
+            {
+              "from": "104.23.231.30",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 7.534
+            },
+            {
+              "from": "104.23.231.30",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 4.154
+            }
+          ]
+        },
+        {
+          "hop": 7,
+          "result": [
+            {
+              "from": "104.18.1.215",
+              "ttl": 59,
+              "size": 4,
+              "tos": 136,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1250
+                }
+              ],
+              "rtt": 6.409
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 59,
+              "size": 4,
+              "tos": 136,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1250
+                }
+              ],
+              "rtt": 6.119
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 59,
+              "size": 4,
+              "tos": 136,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1250
+                }
+              ],
+              "rtt": 6.289
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 62997,
+      "timestamp": 1779392346,
+      "msm_name": "Traceroute",
+      "from": "122.161.48.56",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392352
+    },
+    {
+      "fw": 5080,
+      "mver": "2.6.2",
+      "lts": 47,
+      "endtime": 1779392351,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 4995.790636,
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 0,
+      "result": [
+        {
+          "error": "name resolution failed: nodename nor servname provided, or not known"
+        }
+      ],
+      "destination_ip_responded": false,
+      "msm_id": 173431563,
+      "prb_id": 64096,
+      "timestamp": 1779392351,
+      "msm_name": "Traceroute",
+      "from": "97.185.253.106",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392352
+    },
+    {
+      "fw": 5090,
+      "mver": "2.6.4",
+      "lts": 12,
+      "endtime": 1779392358,
+      "dst_name": "sentry.mobikwik.com",
+      "ttr": 22.261221,
+      "dst_addr": "104.18.1.215",
+      "src_addr": "145.220.0.55",
+      "proto": "TCP",
+      "af": 4,
+      "size": 48,
+      "paris_id": 1,
+      "result": [
+        {
+          "hop": 1,
+          "result": [
+            {
+              "from": "145.220.0.1",
+              "ttl": 255,
+              "size": 28,
+              "rtt": 0.325
+            },
+            {
+              "from": "145.220.0.1",
+              "ttl": 255,
+              "size": 28,
+              "rtt": 0.477
+            },
+            {
+              "from": "145.220.0.1",
+              "ttl": 255,
+              "size": 28,
+              "rtt": 0.219
+            }
+          ]
+        },
+        {
+          "hop": 2,
+          "result": [
+            {
+              "from": "192.12.54.190",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 0.289
+            },
+            {
+              "from": "192.12.54.190",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 0.315
+            },
+            {
+              "from": "192.12.54.190",
+              "ttl": 254,
+              "size": 28,
+              "rtt": 0.684
+            }
+          ]
+        },
+        {
+          "hop": 3,
+          "result": [
+            {
+              "from": "185.1.160.217",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 0.993
+            },
+            {
+              "from": "185.1.160.217",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 1.58
+            },
+            {
+              "from": "185.1.160.217",
+              "ttl": 253,
+              "size": 28,
+              "rtt": 30.47
+            }
+          ]
+        },
+        {
+          "hop": 4,
+          "result": [
+            {
+              "from": "141.101.65.93",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 1.043
+            },
+            {
+              "from": "141.101.65.93",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 1.062
+            },
+            {
+              "from": "141.101.65.93",
+              "ttl": 250,
+              "size": 28,
+              "rtt": 0.953
+            }
+          ]
+        },
+        {
+          "hop": 5,
+          "result": [
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            },
+            {
+              "x": "*"
+            }
+          ]
+        },
+        {
+          "hop": 6,
+          "result": [
+            {
+              "from": "104.18.1.215",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 1.278
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 1.217
+            },
+            {
+              "from": "104.18.1.215",
+              "ttl": 60,
+              "size": 4,
+              "flags": "SA",
+              "hdropts": [
+                {
+                  "mss": 1400
+                }
+              ],
+              "rtt": 1.157
+            }
+          ]
+        }
+      ],
+      "destination_ip_responded": true,
+      "msm_id": 173431563,
+      "prb_id": 7616,
+      "timestamp": 1779392346,
+      "msm_name": "Traceroute",
+      "from": "145.220.0.55",
+      "type": "traceroute",
+      "group_id": 173431562,
+      "stored_timestamp": 1779392359
+    }
+  ],
+  "rtt_by_country": [
+    {
+      "country": "IN",
+      "min_rtt_ms": 30.65618
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 6.415642
+    },
+    {
+      "country": "SG",
+      "min_rtt_ms": 3.485239
+    },
+    {
+      "country": "US",
+      "min_rtt_ms": 11.867587
+    },
+    {
+      "country": "US",
+      "min_rtt_ms": 0.249881
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 6.892034
+    },
+    {
+      "country": "FR",
+      "min_rtt_ms": 3.111709
+    },
+    {
+      "country": "DE",
+      "min_rtt_ms": 5.683958
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 47.355182
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 4.585111
+    },
+    {
+      "country": "IN",
+      "min_rtt_ms": 5.182558
+    },
+    {
+      "country": "NL",
+      "min_rtt_ms": 0.7212
+    }
+  ],
+  "probe_records": [
+    {
+      "pid": 1002932,
+      "cc": "IN",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 30.65618,
+      "max_dist_km": 3065.618,
+      "dist_probe_to_geoip": 12419.918055820877,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 1008829,
+      "cc": "IN",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 6.415642,
+      "max_dist_km": 641.5642,
+      "dist_probe_to_geoip": 14000.706084438512,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 1015590,
+      "cc": "SG",
+      "dst_ip": "104.18.1.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 3.485239,
+      "max_dist_km": 348.5239,
+      "dist_probe_to_geoip": 13574.941386703927,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 28677,
+      "cc": "US",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 11.867587,
+      "max_dist_km": 1186.7587,
+      "dist_probe_to_geoip": 1533.2699720449805,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 31389,
+      "cc": "US",
+      "dst_ip": "0.0.0.0",
+      "min_rtt": 0.249881,
+      "verdict": "NO_GEOIP"
+    },
+    {
+      "pid": 385,
+      "cc": "IN",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 6.892034,
+      "max_dist_km": 689.2034,
+      "dist_probe_to_geoip": 12372.616323346978,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 50649,
+      "cc": "FR",
+      "dst_ip": "104.18.1.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 3.111709,
+      "max_dist_km": 311.17089999999996,
+      "dist_probe_to_geoip": 8952.967524539583,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 51325,
+      "cc": "DE",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 5.683958,
+      "max_dist_km": 568.3958,
+      "dist_probe_to_geoip": 9438.258674953318,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 60641,
+      "cc": "IN",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 47.355182,
+      "max_dist_km": 4735.5181999999995,
+      "dist_probe_to_geoip": 12711.298507334106,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 62302,
+      "cc": "IN",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 4.585111,
+      "max_dist_km": 458.51110000000006,
+      "dist_probe_to_geoip": 12344.68928637419,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 62997,
+      "cc": "IN",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 5.182558,
+      "max_dist_km": 518.2558,
+      "dist_probe_to_geoip": 12350.530636257605,
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "pid": 64096,
+      "cc": "US",
+      "dst_ip": "sentry.mobikwik.com",
+      "min_rtt": null,
+      "verdict": "NO_DATA"
+    },
+    {
+      "pid": 7616,
+      "cc": "NL",
+      "dst_ip": "104.18.0.215",
+      "dst_city": "San Francisco",
+      "dst_country": "US",
+      "dst_org": "AS13335 Cloudflare, Inc.",
+      "min_rtt": 0.7212,
+      "max_dist_km": 72.11999999999999,
+      "dist_probe_to_geoip": 8776.245946286821,
+      "verdict": "CONTRADICTED"
+    }
+  ],
+  "all_paths": [
+    {
+      "pid": 1002932,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [
+        {
+          "hop": 10,
+          "addr": "104.18.0.215",
+          "rtt": 19.836,
+          "rdns": null
+        }
+      ],
+      "cliff_hops": []
+    },
+    {
+      "pid": 1008829,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [
+        {
+          "hop": 10,
+          "addr": "104.18.0.215",
+          "rtt": 6.82,
+          "rdns": null
+        }
+      ],
+      "cliff_hops": []
+    },
+    {
+      "pid": 1015590,
+      "cc": "SG",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 28677,
+      "cc": "US",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 31389,
+      "cc": "US",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 385,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [
+        {
+          "hop": 3,
+          "addr": "182.74.14.241",
+          "rtt": 25.682,
+          "rdns": null
+        }
+      ],
+      "foreign_no_cliff": [
+        {
+          "hop": 7,
+          "addr": "104.18.1.215",
+          "rtt": 7.327,
+          "rdns": null
+        }
+      ],
+      "cliff_hops": [
+        3
+      ]
+    },
+    {
+      "pid": 50649,
+      "cc": "FR",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 51325,
+      "cc": "DE",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 60641,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 62302,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 62997,
+      "cc": "IN",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [
+        {
+          "hop": 7,
+          "addr": "104.18.1.215",
+          "rtt": 6.119,
+          "rdns": null
+        }
+      ],
+      "cliff_hops": []
+    },
+    {
+      "pid": 64096,
+      "cc": "US",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    },
+    {
+      "pid": 7616,
+      "cc": "NL",
+      "confirmed_egress": [],
+      "inconclusive_egress": [],
+      "foreign_no_cliff": [],
+      "cliff_hops": []
+    }
+  ],
+  "whois_cache": {
+    "104.18.0.215": {
+      "asn": "13335",
+      "asn_desc": "CLOUDFLARENET - Cloudflare, Inc., US",
+      "network_name": "CLOUDFLARENET",
+      "country": null
+    },
+    "104.18.1.215": {
+      "asn": "13335",
+      "asn_desc": "CLOUDFLARENET - Cloudflare, Inc., US",
+      "network_name": "CLOUDFLARENET",
+      "country": null
+    },
+    "182.74.14.241": {
+      "asn": "9498",
+      "asn_desc": "BBIL-AP - BHARTI Airtel Ltd., IN",
+      "network_name": "OCMD-2748871-Gurgaon",
+      "country": "IN"
+    }
+  }
+}

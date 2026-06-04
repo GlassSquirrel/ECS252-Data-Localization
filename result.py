@@ -23,14 +23,16 @@ import socket
 # ─────────────────────────────────────────────────────────────
 # CONFIG — edit these before running
 # ─────────────────────────────────────────────────────────────
-API_KEY   = "Your_RIPE_Atlas_API_Key"  # to be changed
-PING_ID   = 173126494   # to be changed
-TRACE_ID  = 173126495   # to be changed
+API_KEY   = "55579dc0-ceb1-42b6-a9ef-6eb2ab309ae5"  # to be changed
+PING_ID   = 173431562   # to be changed
+TRACE_ID  = 173431563   # to be changed
 
 # Provider label used in report output
 PROVIDER  = "MobiKwik"  # to be changed
-ENDPOINT  = "CDN: static.mobikwik.com"   # to be changed
-TARGET_HOST = "static.mobikwik.com"   # 纯domain，用于文件命名, to be changed
+ENDPOINT  = "Fraud Detection: sentry.mobikwik.com"   # to be changed
+TARGET_HOST = "sentry.mobikwik.com"   # to be changed
+
+IPINFO_TOKEN = "e5ed9fe7fe0d43"
 
 # ─────────────────────────────────────────────────────────────
 # SECTION 0 — OUTPUT UTILITIES
@@ -91,14 +93,24 @@ def save_report(fname, sections: dict):
 # SECTION 1 — ATLAS HELPERS
 # ─────────────────────────────────────────────────────────────
 
-def atlas_get(path):
+def atlas_get(path, retries=3, backoff=10):
     """Authenticated GET against the RIPE Atlas REST API."""
-    r = requests.get(
-        f"https://atlas.ripe.net/api/v2/{path}",
-        headers={"Authorization": f"Key {API_KEY}"}
-    )
-    r.raise_for_status()
-    return r.json()
+    for attempt in range(retries):
+        try:
+            r = requests.get(
+                f"https://atlas.ripe.net/api/v2/{path}",
+                headers={"Authorization": f"Key {API_KEY}"},
+                timeout=60
+            )
+            r.raise_for_status()
+            return r.json()
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 504 and attempt < retries - 1:
+                print(f"    [warn] 504 timeout, retrying in {backoff}s "
+                        f"(attempt {attempt+1}/{retries})...")
+                time.sleep(backoff)
+                continue
+            raise
 
 
 def fetch_results(msm_id):
@@ -160,22 +172,35 @@ def get_ip_info(ip):
     Returns dict with keys: lat, lon, city, country, org
     Returns None on failure.
     """
-    try:
-        r = requests.get(f"https://ipinfo.io/{ip}/json", timeout=5)
-        if r.ok:
-            data = r.json()
-            loc  = data.get("loc", "")
-            if loc:
-                lat, lon = map(float, loc.split(","))
-                return {
-                    "lat"     : lat,
-                    "lon"     : lon,
-                    "city"    : data.get("city",    "?"),
-                    "country" : data.get("country", "?"),
-                    "org"     : data.get("org",     "?"),
-                }
-    except Exception:
-        pass
+    for attempt in range(3):
+        try:
+            r = requests.get(
+                f"https://ipinfo.io/{ip}/json?token={IPINFO_TOKEN}",
+                timeout=5
+            )
+            print(f"    [debug] {ip} → status={r.status_code} body={r.text[:200]}", flush=True)
+            if r.status_code == 429:
+                wait = 60 * (attempt + 1)
+                print(f"    [ipinfo] rate limited — waiting {wait}s before retry...",
+                      flush=True)
+                time.sleep(wait)
+                continue
+            if r.ok:
+                data = r.json()
+                loc  = data.get("loc", "")
+                print(f"    [debug] {ip} → loc={loc}", flush=True)
+                if loc:
+                    lat, lon = map(float, loc.split(","))
+                    return {
+                        "lat"     : lat,
+                        "lon"     : lon,
+                        "city"    : data.get("city",    "?"),
+                        "country" : data.get("country", "?"),
+                        "org"     : data.get("org",     "?"),
+                    }
+        except Exception as e:
+            print(f"    [debug] exception for {ip}: {e}", flush=True)
+        time.sleep(1)
     return None
 
 
@@ -194,7 +219,6 @@ def fetch_probe_location(pid):
     except Exception:
         pass
     return None
-
 
 # ─────────────────────────────────────────────────────────────
 # SECTION 3 — PING ANALYSIS
@@ -613,6 +637,7 @@ def parse_traceroute(results, probe_map):
                 "hop"                : idx,
                 "addr"               : addr,
                 "rtt"                : rtt,
+                "is_destination"     : idx == 255,
                 "ipinfo"             : None,
                 "cliff"              : False,
                 "egress"             : False,
@@ -635,7 +660,10 @@ def parse_traceroute(results, probe_map):
         # ── Pass 3: RTT cliff detection and egress classification ─
         # egress classification is only meaningful for IN probes;
         # for overseas probes, cliffs are recorded only for Anycast cross-validation
-        visible = [rec for rec in hop_records if rec["rtt"] is not None and rec["hop"] != 255]
+        visible = [
+            rec for rec in hop_records
+            if rec["rtt"] is not None and not rec["is_destination"]
+        ]
         for i in range(1, len(visible)):
             prev  = visible[i - 1]
             curr  = visible[i]
@@ -654,7 +682,7 @@ def parse_traceroute(results, probe_map):
         # foreign-without-cliff classification: IN probes only
         if cc == "IN":
             for rec in hop_records:
-                if (rec["hop"] == 255):
+                if rec["is_destination"]:
                     continue   # skip destination IP, not an intermediate routing hop
                 if (not rec["cliff"]
                         and rec["addr"] != "*"
@@ -833,6 +861,20 @@ def annotate_paths(all_paths: list, whois_cache: dict):
             is_cliff = rec.get("cliff", False)
             delta    = rec.get("delta")
 
+            # hop 255
+            if rec["is_destination"]:
+                rtt_str = f"{rec['rtt']:>7.1f} ms" if rec["rtt"] is not None else "    N/A   "
+                print(f"    hop 255 (destination): {rec['addr']:<45} {rtt_str}")
+                if rec.get("ipinfo"):
+                    info = rec["ipinfo"]
+                    geo_tag = (f"{info.get('country','?')} / "
+                            f"{info.get('city','?')} / "
+                            f"{info.get('org','?')}")
+                    print(f"           IPinfo : {geo_tag}")
+                elif rec["addr"] != "*":
+                    print(f"           IPinfo : (unavailable)")
+                continue
+
             # silent hop: one line only
             if addr == "*":
                 print(f"    hop {hop_idx:>3}: {'*':<45}    (no response)")
@@ -871,7 +913,8 @@ def annotate_paths(all_paths: list, whois_cache: dict):
                 flags += "  ⚠️  foreign ASN without RTT spike"
 
             # print line 1 and line 2
-            print(f"    hop {hop_idx:>3}: {addr:<45} {rtt:>7.1f} ms{flags}")
+            rtt_str = f"{rtt:>7.1f} ms" if rtt is not None else "    N/A   "
+            print(f"    hop {hop_idx:>3}: {addr:<45} {rtt_str}{flags}")
             print(f"           IPinfo : {geo_tag}")
 
             # ── Line 3: WHOIS ─────────────────────────────────────

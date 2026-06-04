@@ -1,8 +1,8 @@
 import requests
 
-API_KEY = "Your_RIPE_Atlas_API_Key"  # to be changed
+API_KEY = "55579dc0-ceb1-42b6-a9ef-6eb2ab309ae5"  # to be changed
 # use the domain instead of IP address!
-TARGET_HOST = "static.mobikwik.com"  # to be changed
+TARGET_HOST = "sentry.mobikwik.com"  # to be changed
 
 payload = {
     "definitions": [
@@ -12,7 +12,7 @@ payload = {
             "type": "ping", 
             "packets": 5,
             "resolve_on_probe": True, # let evert probe resolve DNS locally
-            "description": "MobiKwik CDN - Ping"    # to be changed
+            "description": "MobiKwik Fraud Detection - Ping"    # to be changed
         },
         {
             "target": TARGET_HOST, 
@@ -22,7 +22,7 @@ payload = {
             "port": 443, 
             "max_hops": 32,
             "resolve_on_probe": True, 
-            "description": "MobiKwik CDN - Traceroute TCP/443"   # to be changed
+            "description": "MobiKwik Fraud Detection - Traceroute TCP/443"   # to be changed
         }
     ],
     "probes": [
